@@ -1,0 +1,954 @@
+stdClass Object
+(
+    [s] => 1
+    [d] => stdClass Object
+        (
+            [taxDateView] => 15 Nov 2023
+            [printUserName] => Belum cetak/email
+            [reverseInvoice] => 
+            [numericField10] => 0
+            [masterProjectId] => 
+            [receiveItem] => 
+            [lastReturnDate] => 
+            [taxableDownPayment1] => 0
+            [taxableDownPayment2] => 0
+            [reversePercentReceived] => 
+            [currencyId] => 50
+            [transDateView] => 15 Nov 2023
+            [receiveItemHistory] => Array
+                (
+                )
+
+            [tax1Id] => 
+            [branchId] => 50
+            [lastPaymentId] => 50
+            [billOfMaterial] => 
+            [taxNumber] => 
+            [tax1Amount] => 0
+            [salesOrder] => 
+            [commentCount] => 0
+            [expenseBillHistory] => Array
+                (
+                )
+
+            [hasNPWP] => 
+            [orderDownPayment] => 
+            [taxableAmount2] => 0
+            [taxableAmount1] => 0
+            [lastCashDiscPercent] => 
+            [taxableAmount4] => 0
+            [billNumber] => FKT01
+            [charField10] => 
+            [processStages] => 
+            [availableDownPayment] => 0
+            [journalId] => 150
+            [taxReturn] => 0
+            [paymentHistory] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [approvalStatus] => APPROVED
+                            [historyDate] => 15/11/2023
+                            [historyNumber] => 110102.2023.11.00001
+                            [historyAmount] => 19650
+                            [id] => 50
+                            [historyIsPPhPayment] => 
+                        )
+
+                )
+
+            [customerClaim] => 
+            [journal] => 
+            [deliveryPacking] => 
+            [vendor] => stdClass Object
+                (
+                    [documentCode] => DIGUNGGUNG
+                    [vendorType] => COMPANY
+                    [charField8] => 
+                    [charField9] => 
+                    [charField6] => 
+                    [charField7] => 
+                    [numericField10] => 0
+                    [charField4] => 
+                    [charField5] => 
+                    [optLock] => 1
+                    [defaultPurchaseDisc] => 
+                    [vendorBankList] => Array
+                        (
+                        )
+
+                    [defaultIncTax] => 
+                    [serviceSeller] => 
+                    [charField2] => 
+                    [charField3] => 
+                    [apAccountCount] => 0
+                    [wpName] => PT. ABC
+                    [charField1] => 
+                    [id] => 50
+                    [currencyId] => 50
+                    [taxSameAsBill] => 1
+                    [useBillNumber] => 1
+                    [dateField2] => 
+                    [branchId] => 
+                    [taxAddressId] => 100
+                    [vendorNo] => V.00001
+                    [dateField1] => 
+                    [defaultTermId] => 100
+                    [billAddressId] => 100
+                    [employeeId] => 
+                    [pkpNo] => 
+                    [vendorTaxType] => PRLHNDLMNEGERI_BKN_PPN
+                    [npwpNo] => 
+                    [suspended] => 
+                    [numericField9] => 0
+                    [numericField8] => 0
+                    [numericField7] => 0
+                    [numericField6] => 0
+                    [numericField5] => 0
+                    [name] => PT. ABC
+                    [numericField4] => 0
+                    [numericField3] => 0
+                    [numericField2] => 0
+                    [defaultInvoiceDesc] => 
+                    [numericField1] => 0
+                    [charField10] => 
+                    [categoryId] => 52
+                )
+
+            [currency] => stdClass Object
+                (
+                    [symbol] => Rp
+                    [defaultArAccountId] => 57
+                    [code] => IDR
+                    [defaultSalesDiscAccountId] => 60
+                    [optLock] => 7
+                    [currencyConverterType] => TO_LOCAL
+                    [defaultAdvSalesAccountId] => 59
+                    [defaultAdvPurchaseAccountId] => 58
+                    [defaultRealizeGlAccountId] => 61
+                    [name] => Indonesian Rupiah
+                    [codeSymbol] => IDR Rp
+                    [id] => 50
+                    [defaultApAccountId] => 56
+                    [defaultUnrealizeGlAccountId] => 62
+                )
+
+            [vendorPrice] => 
+            [canReceiveItem] => 
+            [paymentTermId] => 104
+            [outstanding] => 
+            [fobId] => 
+            [vendorBankId] => 
+            [searchCharField1] => stdClass Object
+                (
+                    [id] => 000001
+                    [name] => 000001
+                )
+
+            [deliveryOrder] => 
+            [searchCharField3] => stdClass Object
+                (
+                    [id] => 012345
+                    [name] => 012345
+                )
+
+            [searchCharField2] => stdClass Object
+                (
+                    [id] => 4.0
+                    [name] => 4.0
+                )
+
+            [taxReported] => 
+            [taxable1Total] => 0
+            [primePayment] => 19650
+            [detailDownPayment] => Array
+                (
+                )
+
+            [roundedScaleItemAmount] => 
+            [taxPaymentHistory] => Array
+                (
+                )
+
+            [dueDate] => 15/12/2023
+            [inclusiveTax] => 
+            [taxableDiscount4] => 0
+            [vendorId] => 50
+            [taxableDiscount2] => 0
+            [toAddress] => Jl. Raya Ujung Aspal No.9 Kab. Tangerang Banten 15530 Indonesia
+            [taxableDiscount1] => 0
+            [rollOver] => 
+            [masterDepartmentId] => 
+            [taxOwing] => 0
+            [itemAdjustment] => 
+            [periodEnd] => 
+            [workOrder] => 
+            [shipment] => 
+            [sptMasaId] => 
+            [primeReturn] => 0
+            [salesQuotation] => 
+            [fixedAssetEdited] => 
+            [fob] => 
+            [taxDownPayment] => 0
+            [tax1AmountBase] => 0
+            [description] => test aplikasi
+            [invoiceDp] => 
+            [taxPayment] => 0
+            [rate] => 1
+            [lastPaymentDate] => 15/11/2023
+            [transDate] => 15/11/2023
+            [inputDownPayment] => 0
+            [cashDiscount] => 0
+            [primeDownPayment] => 0
+            [salesReceipt] => 
+            [approvalStatus] => APPROVED
+            [tax2Id] => 
+            [materialSlip] => 
+            [sellingPriceAdjustment] => 
+            [hasInventoryPartItem] => 1
+            [downPaymentAccountId] => 
+            [purchaseAmount] => 19650
+            [numericField9] => 0
+            [numericField8] => 0
+            [numericField7] => 0
+            [createdBy] => 581534
+            [shipmentId] => 
+            [numericField6] => 0
+            [numericField5] => 0
+            [numericField4] => 0
+            [purchaseOrder] => 
+            [numericField3] => 0
+            [numericField2] => 0
+            [numericField1] => 0
+            [userPrinted] => 
+            [age] => 0
+            [charField8] => 
+            [charField9] => 
+            [tax4Amount] => 0
+            [charField6] => 
+            [tax1Rate] => 0
+            [charField7] => 
+            [charField4] => 
+            [charField5] => 
+            [optLock] => 12
+            [percentTaxable] => 100
+            [returnHistory] => Array
+                (
+                )
+
+            [number] => PI.2023.11.00001
+            [printedTime] => 
+            [taxable2Total] => 0
+            [charField2] => 4.0
+            [charField3] => 012345
+            [dueDateView] => 15 Dec 2023
+            [charField1] => 000001
+            [id] => 50
+            [lastPaymentDateView] => 15 Nov 2023
+            [hasStatusHistory] => 1
+            [dateField2] => 
+            [dateField1] => 20/11/2023
+            [taxable] => 
+            [salesInvoice] => 
+            [vendorTaxType] => PRLHNDLMNEGERI_BKN_PPN
+            [purchaseInvoice] => 1
+            [shipDate] => 30/11/2023
+            [transferOrder] => 
+            [detailExpense] => Array
+                (
+                )
+
+            [detailItem] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [lastItemDiscPercent] => 1
+                            [charField8] => 
+                            [returnQuantity] => 0
+                            [charField9] => 
+                            [processQuantityDesc] => 
+                            [charField6] => 
+                            [charField7] => 
+                            [numericField10] => 0
+                            [charField4] => 
+                            [departmentId] => 
+                            [charField5] => 
+                            [optLock] => 1
+                            [itemUnit] => stdClass Object
+                                (
+                                    [optLock] => 0
+                                    [name] => KG
+                                    [id] => 100
+                                )
+
+                            [detailSerialNumber] => Array
+                                (
+                                )
+
+                            [receiveItem] => stdClass Object
+                                (
+                                    [number] => RI.2023.11.00002
+                                    [id] => 100
+                                )
+
+                            [charField2] => 
+                            [receiveItemDetailId] => 100
+                            [charField3] => 
+                            [charField1] => 
+                            [id] => 50
+                            [dataClassification6Id] => 
+                            [useTax1] => 
+                            [unitPrice] => 100
+                            [dateField2] => 
+                            [dataClassification1] => 
+                            [branchId] => 50
+                            [useTax3] => 
+                            [dataClassification3] => 
+                            [item] => stdClass Object
+                                (
+                                    [unit2Id] => 
+                                    [charField8] => 
+                                    [charField9] => 
+                                    [charField6] => 
+                                    [charField7] => 
+                                    [numericField10] => 0
+                                    [unit4Price] => 0
+                                    [charField4] => 
+                                    [charField5] => 
+                                    [optLock] => 0
+                                    [percentTaxable] => 100
+                                    [ratioVendorUnit] => 1
+                                    [unit3Price] => 0
+                                    [salesDiscountGlAccountId] => 101
+                                    [unit4VendorPrice] => 0
+                                    [itemProduced] => 
+                                    [charField2] => 
+                                    [charField3] => 
+                                    [unit1VendorPrice] => 0
+                                    [charField1] => 
+                                    [id] => 100
+                                    [maxOptionModifier] => 1
+                                    [unitPrice] => 0
+                                    [dateField2] => 
+                                    [tax1Id] => 
+                                    [branchId] => 
+                                    [dateField1] => 
+                                    [useWholesalePrice] => 
+                                    [onSales] => 0
+                                    [unit5Price] => 0
+                                    [suspended] => 
+                                    [unit2Price] => 0
+                                    [goodTransitGlAccountId] => 73
+                                    [cogsGlAccountId] => 102
+                                    [referenceSubstitutionId] => 
+                                    [shortName] => BATU BARA
+                                    [itemSubstitutionId] => 
+                                    [charField10] => 
+                                    [unBilledGlAccountId] => 94
+                                    [variantLabel2] => 
+                                    [unit3Id] => 
+                                    [variantLabel1] => 
+                                    [dimWidth] => 0
+                                    [salesRetGlAccountId] => 100
+                                    [unitVendorPrice] => 0
+                                    [dimDepth] => 0
+                                    [minimumQuantityReorder] => 0
+                                    [lockTime] => 
+                                    [vendorPrice] => 0
+                                    [minimumQuantity] => 0
+                                    [tax4Id] => 
+                                    [totalUnitVendorPrice] => 0
+                                    [dimHeight] => 0
+                                    [additionalCost] => 
+                                    [unit4Id] => 
+                                    [notes] => 
+                                    [purchaseRetGlAccountId] => 72
+                                    [unit1] => stdClass Object
+                                        (
+                                            [optLock] => 0
+                                            [name] => KG
+                                            [id] => 100
+                                        )
+
+                                    [variantParentId] => 
+                                    [unit2] => 
+                                    [unit3] => 
+                                    [preferedVendorId] => 
+                                    [ratio2] => 0
+                                    [unit4] => 
+                                    [unit5] => 
+                                    [ratio4] => 0
+                                    [ratio3] => 0
+                                    [ratio5] => 0
+                                    [variantDetail2] => 
+                                    [tax3Id] => 
+                                    [inventoryGlAccountId] => 72
+                                    [variantDetail1] => 
+                                    [controlQuantity] => 
+                                    [weight] => 0
+                                    [upcNo] => 
+                                    [substituted] => 
+                                    [minOptionModifier] => 0
+                                    [salesGlAccountId] => 98
+                                    [name] => BATU BARA
+                                    [deliveryLeadTime] => 0
+                                    [manageExpired] => 
+                                    [no] => 100002
+                                    [defaultDiscount] => 
+                                    [itemType] => INVENTORY
+                                    [unit1Id] => 100
+                                    [unit5VendorPrice] => 0
+                                    [unit5Id] => 
+                                    [itemCategoryId] => 100
+                                    [unit2VendorPrice] => 0
+                                    [tax1] => 
+                                    [tax2] => 
+                                    [manageSN] => 
+                                    [materialProduced] => 1
+                                    [variantSeq] => 
+                                    [tax3] => 
+                                    [tax4] => 
+                                    [serialNumberType] => UNIQUE
+                                    [tax2Id] => 
+                                    [unit3VendorPrice] => 0
+                                    [cost] => 0
+                                    [printDetailGroup] => 
+                                    [calculateGroupPrice] => 
+                                    [numericField9] => 0
+                                    [defStandardCost] => 0
+                                    [numericField8] => 0
+                                    [numericField7] => 0
+                                    [numericField6] => 0
+                                    [numericField5] => 0
+                                    [numericField4] => 0
+                                    [numericField3] => 0
+                                    [numericField2] => 0
+                                    [numericField1] => 0
+                                    [vendorUnitId] => 100
+                                )
+
+                            [dataClassification1Id] => 
+                            [useTax2] => 
+                            [dateField1] => 
+                            [dataClassification2] => 
+                            [dataClassification5] => 
+                            [dataClassification4] => 
+                            [dataClassification7] => 
+                            [dataClassification6] => 
+                            [dataClassification9] => 
+                            [dataClassification8] => 
+                            [detailNotes] => test aplikasi
+                            [warehouse] => stdClass Object
+                                (
+                                    [scrapWarehouse] => 
+                                    [defaultWarehouse] => 1
+                                    [locationId] => 52
+                                    [optLock] => 1
+                                    [name] => Utama
+                                    [description] => 
+                                    [pic] => 
+                                    [id] => 50
+                                    [suspended] => 
+                                )
+
+                            [itemId] => 100
+                            [warehouseId] => 50
+                            [purchaseOrderId] => 50
+                            [charField15] => 
+                            [workOrderDetailId] => 
+                            [charField13] => 
+                            [fixedAssetId] => 
+                            [charField14] => 
+                            [charField11] => 
+                            [charField12] => 
+                            [useTax4] => 
+                            [charField10] => 
+                            [dataClassification10] => 
+                            [detailName] => BATU BARA
+                            [lastItemCashDiscount] => 50
+                            [totalPrice] => 4950
+                            [groupSeq] => 
+                            [purchaseInvoiceId] => 50
+                            [dataClassification7Id] => 
+                            [purchaseRequisitionDetailId] => 
+                            [seq] => 1
+                            [dataClassification2Id] => 
+                            [receiveItemDetail] => stdClass Object
+                                (
+                                    [id] => 100
+                                )
+
+                            [project] => 
+                            [quantityDefault] => 50
+                            [itemDiscPercent] => 1
+                            [dataClassification8Id] => 
+                            [dataClassification3Id] => 
+                            [tax3Id] => 
+                            [itemCost] => 99
+                            [receivedQuantity] => 0
+                            [projectId] => 
+                            [purchaseOrderDetailId] => 50
+                            [purchaseAmountBase] => 4950
+                            [dataClassification10Id] => 
+                            [itemCashDiscount] => 50
+                            [dataClassification9Id] => 
+                            [department] => 
+                            [workOrderProcessId] => 
+                            [tax3] => 
+                            [detailTaxName] => 
+                            [dataClassification5Id] => 
+                            [dataClassification4Id] => 
+                            [quantity] => 50
+                            [purchaseOrderDetail] => stdClass Object
+                                (
+                                    [id] => 50
+                                )
+
+                            [totalCaptionSerialNumber] => 0 No Seri/Produksi. Isikan 50 lagi
+                            [purchaseAmount] => 4950
+                            [numericField9] => 0
+                            [numericField8] => 0
+                            [numericField7] => 0
+                            [numericField6] => 0
+                            [numericField5] => 0
+                            [numericField4] => 0
+                            [purchaseOrder] => stdClass Object
+                                (
+                                    [number] => PO.2023.11.00001
+                                    [id] => 50
+                                )
+
+                            [itemUnitId] => 100
+                            [numericField3] => 0
+                            [numericField2] => 0
+                            [itemHistoryId] => 
+                            [numericField1] => 0
+                            [purchaseRequisitionId] => 
+                            [receiveItemId] => 100
+                            [unitRatio] => 1
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [lastItemDiscPercent] => 2
+                            [charField8] => 
+                            [returnQuantity] => 0
+                            [charField9] => 
+                            [processQuantityDesc] => 
+                            [charField6] => 
+                            [charField7] => 
+                            [numericField10] => 0
+                            [charField4] => 
+                            [departmentId] => 
+                            [charField5] => 
+                            [optLock] => 1
+                            [itemUnit] => stdClass Object
+                                (
+                                    [optLock] => 0
+                                    [name] => KG
+                                    [id] => 100
+                                )
+
+                            [detailSerialNumber] => Array
+                                (
+                                )
+
+                            [receiveItem] => stdClass Object
+                                (
+                                    [number] => RI.2023.11.00002
+                                    [id] => 100
+                                )
+
+                            [charField2] => 
+                            [receiveItemDetailId] => 101
+                            [charField3] => 
+                            [charField1] => 
+                            [id] => 51
+                            [dataClassification6Id] => 
+                            [useTax1] => 
+                            [unitPrice] => 200
+                            [dateField2] => 
+                            [dataClassification1] => 
+                            [branchId] => 50
+                            [useTax3] => 
+                            [dataClassification3] => 
+                            [item] => stdClass Object
+                                (
+                                    [unit2Id] => 
+                                    [charField8] => 
+                                    [charField9] => 
+                                    [charField6] => 
+                                    [charField7] => 
+                                    [numericField10] => 0
+                                    [unit4Price] => 0
+                                    [charField4] => 
+                                    [charField5] => 
+                                    [optLock] => 0
+                                    [percentTaxable] => 100
+                                    [ratioVendorUnit] => 1
+                                    [unit3Price] => 0
+                                    [salesDiscountGlAccountId] => 101
+                                    [unit4VendorPrice] => 0
+                                    [itemProduced] => 
+                                    [charField2] => 
+                                    [charField3] => 
+                                    [unit1VendorPrice] => 0
+                                    [charField1] => 
+                                    [id] => 50
+                                    [maxOptionModifier] => 1
+                                    [unitPrice] => 0
+                                    [dateField2] => 
+                                    [tax1Id] => 
+                                    [branchId] => 
+                                    [dateField1] => 
+                                    [useWholesalePrice] => 
+                                    [onSales] => 0
+                                    [unit5Price] => 0
+                                    [suspended] => 
+                                    [unit2Price] => 0
+                                    [goodTransitGlAccountId] => 73
+                                    [cogsGlAccountId] => 102
+                                    [referenceSubstitutionId] => 
+                                    [shortName] => GLASS WATER
+                                    [itemSubstitutionId] => 
+                                    [charField10] => 
+                                    [unBilledGlAccountId] => 94
+                                    [variantLabel2] => 
+                                    [unit3Id] => 
+                                    [variantLabel1] => 
+                                    [dimWidth] => 0
+                                    [salesRetGlAccountId] => 100
+                                    [unitVendorPrice] => 0
+                                    [dimDepth] => 0
+                                    [minimumQuantityReorder] => 0
+                                    [lockTime] => 
+                                    [vendorPrice] => 0
+                                    [minimumQuantity] => 0
+                                    [tax4Id] => 
+                                    [totalUnitVendorPrice] => 0
+                                    [dimHeight] => 0
+                                    [additionalCost] => 
+                                    [unit4Id] => 
+                                    [notes] => 
+                                    [purchaseRetGlAccountId] => 72
+                                    [unit1] => stdClass Object
+                                        (
+                                            [optLock] => 0
+                                            [name] => KG
+                                            [id] => 100
+                                        )
+
+                                    [variantParentId] => 
+                                    [unit2] => 
+                                    [unit3] => 
+                                    [preferedVendorId] => 
+                                    [ratio2] => 0
+                                    [unit4] => 
+                                    [unit5] => 
+                                    [ratio4] => 0
+                                    [ratio3] => 0
+                                    [ratio5] => 0
+                                    [variantDetail2] => 
+                                    [tax3Id] => 
+                                    [inventoryGlAccountId] => 72
+                                    [variantDetail1] => 
+                                    [controlQuantity] => 
+                                    [weight] => 0
+                                    [upcNo] => 
+                                    [substituted] => 
+                                    [minOptionModifier] => 0
+                                    [salesGlAccountId] => 98
+                                    [name] => GLASS WATER
+                                    [deliveryLeadTime] => 0
+                                    [manageExpired] => 
+                                    [no] => 100001
+                                    [defaultDiscount] => 
+                                    [itemType] => INVENTORY
+                                    [unit1Id] => 100
+                                    [unit5VendorPrice] => 0
+                                    [unit5Id] => 
+                                    [itemCategoryId] => 100
+                                    [unit2VendorPrice] => 0
+                                    [tax1] => 
+                                    [tax2] => 
+                                    [manageSN] => 
+                                    [materialProduced] => 1
+                                    [variantSeq] => 
+                                    [tax3] => 
+                                    [tax4] => 
+                                    [serialNumberType] => UNIQUE
+                                    [tax2Id] => 
+                                    [unit3VendorPrice] => 0
+                                    [cost] => 0
+                                    [printDetailGroup] => 
+                                    [calculateGroupPrice] => 
+                                    [numericField9] => 0
+                                    [defStandardCost] => 0
+                                    [numericField8] => 0
+                                    [numericField7] => 0
+                                    [numericField6] => 0
+                                    [numericField5] => 0
+                                    [numericField4] => 0
+                                    [numericField3] => 0
+                                    [numericField2] => 0
+                                    [numericField1] => 0
+                                    [vendorUnitId] => 100
+                                )
+
+                            [dataClassification1Id] => 
+                            [useTax2] => 
+                            [dateField1] => 
+                            [dataClassification2] => 
+                            [dataClassification5] => 
+                            [dataClassification4] => 
+                            [dataClassification7] => 
+                            [dataClassification6] => 
+                            [dataClassification9] => 
+                            [dataClassification8] => 
+                            [detailNotes] => testing
+                            [warehouse] => stdClass Object
+                                (
+                                    [scrapWarehouse] => 
+                                    [defaultWarehouse] => 1
+                                    [locationId] => 52
+                                    [optLock] => 1
+                                    [name] => Utama
+                                    [description] => 
+                                    [pic] => 
+                                    [id] => 50
+                                    [suspended] => 
+                                )
+
+                            [itemId] => 50
+                            [warehouseId] => 50
+                            [purchaseOrderId] => 50
+                            [charField15] => 
+                            [workOrderDetailId] => 
+                            [charField13] => 
+                            [fixedAssetId] => 
+                            [charField14] => 
+                            [charField11] => 
+                            [charField12] => 
+                            [useTax4] => 
+                            [charField10] => 
+                            [dataClassification10] => 
+                            [detailName] => GLASS WATER
+                            [lastItemCashDiscount] => 300
+                            [totalPrice] => 14700
+                            [groupSeq] => 
+                            [purchaseInvoiceId] => 50
+                            [dataClassification7Id] => 
+                            [purchaseRequisitionDetailId] => 
+                            [seq] => 2
+                            [dataClassification2Id] => 
+                            [receiveItemDetail] => stdClass Object
+                                (
+                                    [id] => 101
+                                )
+
+                            [project] => 
+                            [quantityDefault] => 75
+                            [itemDiscPercent] => 2
+                            [dataClassification8Id] => 
+                            [dataClassification3Id] => 
+                            [tax3Id] => 
+                            [itemCost] => 196
+                            [receivedQuantity] => 0
+                            [projectId] => 
+                            [purchaseOrderDetailId] => 51
+                            [purchaseAmountBase] => 14700
+                            [dataClassification10Id] => 
+                            [itemCashDiscount] => 300
+                            [dataClassification9Id] => 
+                            [department] => 
+                            [workOrderProcessId] => 
+                            [tax3] => 
+                            [detailTaxName] => 
+                            [dataClassification5Id] => 
+                            [dataClassification4Id] => 
+                            [quantity] => 75
+                            [purchaseOrderDetail] => stdClass Object
+                                (
+                                    [id] => 51
+                                )
+
+                            [totalCaptionSerialNumber] => 0 No Seri/Produksi. Isikan 75 lagi
+                            [purchaseAmount] => 14700
+                            [numericField9] => 0
+                            [numericField8] => 0
+                            [numericField7] => 0
+                            [numericField6] => 0
+                            [numericField5] => 0
+                            [numericField4] => 0
+                            [purchaseOrder] => stdClass Object
+                                (
+                                    [number] => PO.2023.11.00001
+                                    [id] => 50
+                                )
+
+                            [itemUnitId] => 100
+                            [numericField3] => 0
+                            [numericField2] => 0
+                            [itemHistoryId] => 
+                            [numericField1] => 0
+                            [purchaseRequisitionId] => 
+                            [receiveItemId] => 100
+                            [unitRatio] => 1
+                        )
+
+                )
+
+            [employeePayment] => 
+            [expenseAccrual] => 
+            [salesReturn] => 
+            [status] => PAID
+            [lastTaxPaymentDate] => 
+            [bankTransfer] => 
+            [jobOrder] => 
+            [vendorHasDownPayment] => 
+            [statusOutstanding] => Lunas
+            [downPaymentUsed] => 0
+            [chargedExpenseDifferenceAccountId] => 102
+            [statusName] => Lunas
+            [dpTax3Id] => 
+            [primeOwing] => 0
+            [tax2AmountBase] => 0
+            [tax4Id] => 
+            [tax4Rate] => 0
+            [taxDate] => 15/11/2023
+            [approvalTypeNumberId] => 
+            [purchaseReturn] => 
+            [totalExpense] => 0
+            [documentCode] => INVOICE
+            [apAccount] => stdClass Object
+                (
+                    [no] => 210101
+                    [sub] => 1
+                    [parent] => stdClass Object
+                        (
+                            [no] => 2101
+                            [sub] => 
+                            [parent] => stdClass Object
+                                (
+                                    [no] => 
+                                    [sub] => 
+                                    [parent] => 
+                                    [lvl] => 0
+                                    [accountType] => 
+                                    [optLock] => 0
+                                    [memo] => 
+                                    [accountTypeName] => 
+                                    [parentNode] => 1
+                                    [nameWithIndent] => Root
+                                    [suspended] => 
+                                    [autoNumberTransactionId] => 
+                                    [nameWithIndentStrip] => Root
+                                    [fiscal] => 
+                                    [noWithIndent] => null
+                                    [name] => Root
+                                    [id] => 50
+                                    [currencyId] => 
+                                )
+
+                            [lvl] => 1
+                            [accountType] => ACCOUNT_PAYABLE
+                            [optLock] => 0
+                            [memo] => 
+                            [accountTypeName] => Utang Usaha
+                            [parentNode] => 1
+                            [nameWithIndent] => Utang Usaha
+                            [suspended] => 
+                            [autoNumberTransactionId] => 
+                            [nameWithIndentStrip] => Utang Usaha
+                            [fiscal] => 
+                            [noWithIndent] => 2101
+                            [name] => Utang Usaha
+                            [id] => 51
+                            [currencyId] => 50
+                        )
+
+                    [lvl] => 2
+                    [accountType] => ACCOUNT_PAYABLE
+                    [optLock] => 0
+                    [memo] => 
+                    [accountTypeName] => Utang Usaha
+                    [parentNode] => 
+                    [nameWithIndent] =>     Utang Usaha IDR
+                    [suspended] => 
+                    [autoNumberTransactionId] => 
+                    [nameWithIndentStrip] => - Utang Usaha IDR
+                    [fiscal] => 
+                    [noWithIndent] =>     210101
+                    [name] => Utang Usaha IDR
+                    [id] => 56
+                    [currencyId] => 50
+                )
+
+            [stockOpnameResult] => 
+            [exchangeInvoice] => 
+            [subTotal] => 19650
+            [lastCashDiscount] => 0
+            [manufactureOrder] => 
+            [returnDownPayment] => 0
+            [dateField1View] => 20 Nov 2023
+            [tax2Rate] => 0
+            [openingBalance] => 
+            [fiscalRate] => 1
+            [orderDownPaymentId] => 
+            [assetTransfer] => 
+            [recurringDetailId] => 
+            [tax4AmountBase] => 0
+            [stockOpnameOrder] => 
+            [totalAmount] => 19650
+            [shipDateView] => 30 Nov 2023
+            [manualApprovalNumber] => 
+            [chargedExpenseJournalTo] => BILL
+            [purchaseRequisition] => 
+            [paymentTerm] => stdClass Object
+                (
+                    [cashOnDelivery] => 
+                    [optLock] => 0
+                    [discDays] => 0
+                    [installmentTerm] => 
+                    [name] => net 30
+                    [memo] => 
+                    [defaultTerm] => 
+                    [discPC] => 0
+                    [id] => 104
+                    [netDays] => 30
+                    [manualTerm] => 
+                )
+
+            [noneInvoiceReturn] => 
+            [dppAmount] => 0
+            [finishedGoodSlip] => 
+            [tax2Amount] => 0
+            [purchasePayment] => 
+            [snRequired] => 
+            [purchaseAmountBase] => 19650
+            [otherDeposit] => 
+            [otherPayment] => 
+            [tax1] => 
+            [costDistribution] => 
+            [tax2] => 
+            [reverseBillStatus] => 
+            [itemTransfer] => 
+            [vendorClaim] => 
+            [forceCalculateTaxRate] => 
+            [tax3Amount] => 0
+            [tax4] => 
+            [cashDiscPercent] => 
+            [vendorBankAccount] => 
+            [apAccountId] => 56
+            [materialAdjustment] => 
+            [totalDownPayment] => 0
+            [fixedAsset] => 
+            [attachmentCount] => 0
+            [standardProductCost] => 
+            [detailTax] => Array
+                (
+                )
+
+        )
+
+)
