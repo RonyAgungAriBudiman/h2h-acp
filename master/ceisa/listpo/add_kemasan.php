@@ -3,6 +3,52 @@
 include_once "../../../sqlLib.php";
 $sqlLib = new sqlLib();
 
+if (isset($_POST["simpan"])) {
+
+    $sql = "INSERT INTO BC_KEMASAN_TMP (KodeKemasan, JumlahKemasan, Merek) 
+            VALUES ('" . $_POST["kodejeniskemasan"] . "', '" . $_POST["jumlahkemasan"] . "', '" . $_POST["merkkemasan"] . "')";
+    $save = $sqlLib->insert($sql);
+    if ($save == "1") {
+        $alert = '0';
+        $note = "Proses simpan berhasil!!";
+    } else {
+        $alert = '1';
+        $note = "Proses simpan gagal!!";
+    }
+}
+
+
+if (isset($_POST["delete"])) {
+    $sql = "DELETE FROM BC_KEMASAN_TMP WHERE SeqKemasan = '" . $_POST['seqkemasan'] . "'";
+    $run = $sqlLib->delete($sql);
+    if ($run == "1") {
+        $alert = '0';
+        $note = "Proses delete berhasil!!";
+        unset($_POST);
+    } else {
+        $alert = '1';
+        $note = "Proses delete gagal!!";
+    }
+}
+
+
+if (isset($_POST["update"])) {
+
+    $sql = "UPDATE BC_KEMASAN_TMP 
+            SET KodeKemasan = '" . $_POST["kodejeniskemasan"] . "',
+                JumlahKemasan= '" . $_POST["jumlahkemasan"] . "',
+                Merek= '" . $_POST["merkkemasan"] . "'
+                WHERE SeqKemasan = '" . $_POST['seqkemasan'] . "'";
+    $run = $sqlLib->update($sql);
+    if ($run == "1") {
+        $alert = '0';
+        $note = "Proses update berhasil!!";
+    } else {
+        $alert = '1';
+        $note = "Proses update gagal!!";
+    }
+}
+
 
 if (isset($_POST["tutup"])) {
     ?>
@@ -11,6 +57,17 @@ if (isset($_POST["tutup"])) {
             window.close();
         </script>
     <?php
+}
+
+if (isset($_POST["edit"])) {
+    $sql_tarif = "SELECT SeqKemasan, KodeKemasan, JumlahKemasan, Merek
+                    FROM BC_KEMASAN_TMP
+                    WHERE SeqKemasan = '" . $_POST["seqkemasan"] . "' ";
+    $data_datif = $sqlLib->select($sql_tarif);
+    $_POST["kodejeniskemasan"] = $data_datif[0]['KodeKemasan'];
+    $_POST["jumlahkemasan"] = $data_datif[0]['JumlahKemasan'];
+    $_POST["merkkemasan"] = $data_datif[0]['Merek'];
+    $_POST["seqkontainer"] = $data_datif[0]['SeqKontainer'];
 }
 
 ?>
@@ -120,6 +177,34 @@ if (isset($_POST["tutup"])) {
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <?php
+                                    $no = 1;
+                                    $sql_kon = "SELECT a.SeqKemasan, a.KodeKemasan, a.JumlahKemasan, a.Merek,
+                                                    b.JenisKemasan
+                                                    FROM BC_KEMASAN_TMP a 
+                                                    LEFT JOIN ms_kemasan b on b.KodeJenisKemasan = a.KodeKemasan";
+                                    $data_kon = $sqlLib->select($sql_kon);
+                                    foreach ($data_kon as $row_kon) {
+                                        ?>
+                                            <tr>
+                                                <td><?php echo $no; ?></td>
+                                                <td><?php echo $row_kon['JumlahKemasan'] ?></td>
+                                                <td><?php echo $row_kon['JenisKemasan'] ?></td>
+                                                <td><?php echo $row_kon['Merek'] ?></td>
+                                                <td>
+                                                    <form method="post" id="form" autocomplete="off" enctype="multipart/form-data">
+                                                        <input type="hidden" class="form-control" name="seqkemasan" value="<?php echo $row_kon['SeqKemasan'] ?>">
+                                                        <input type="submit" class="btn btn-success" name="edit" Value="Edit">
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        <?php
+            
+                                        }
+                                        $no++;
+                                        ?>
+                                        <input type="hidden" name="jmlkemasan" id="jmlkemasan" value="<?php echo ($no - 1); ?>">
+                               
                                 </tbody>
                             </table>
                         </div>
