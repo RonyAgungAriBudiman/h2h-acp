@@ -1,9 +1,9 @@
 <?php
 $sql_pt = "SELECT a.NamaPerusahaan, a.Alamat, a.KodeJenisIdentitas, a.NomorIdentitas,  a.NIB, a.Nama, a.Jabatan, a.KodeJenisTpb, a.Kota, a.NomorIjinEntitas, 
                       a.TanggalIjinEntitas, a.KodeKantor, a.KantorPabean , a.KodeStatus, b.NamaKantor
-                  FROM ms_perusahaan a
-                  LEFT JOIN ms_kantor b on b.KodeKantor = a.KodeKantor
-                  WHERE a.IDPerusahaan ='1' ";
+			FROM ms_perusahaan a
+			LEFT JOIN ms_kantor b on b.KodeKantor = a.KodeKantor
+			WHERE a.IDPerusahaan ='1' ";
 $data_pt = $sqlLib->select($sql_pt);
 
 $sql_po = "SELECT a.NoPO, a.TanggalPo, a.Vendor, a.Alamat, a.Subtotal, a.Tax2Amount, a.TotalAmount,
