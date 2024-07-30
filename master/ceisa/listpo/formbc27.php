@@ -374,6 +374,11 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 						<div class="card shadow p-1 mb-2 bg-white rounded">
 							<div class="card-header" style="border-bottom:solid 0.5px #31708f;">
 								<h4>Kemasan</h4>
+								<div class="col-sm-6 mb-2" style="float: right;">
+                                        <a href="javascript:void(0);" onclick="popup('nometer', 'master/ceisa/listso/add_kontainer.php', '1100', '500')">
+                                            <button class="btn btn-primary" type="button" style="border-radius: 0;"><i class="fa fa-plus"></i> Kontainer </button>
+                                        </a>
+                                </div>
 							</div>
 							<div class="card-body">
 								<div class="form-group row">
