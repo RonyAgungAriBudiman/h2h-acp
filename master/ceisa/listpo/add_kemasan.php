@@ -109,5 +109,77 @@ if (isset($_POST["tutup"])) {
             </form>
         </div>
     <div>
-</div>                
+</div>     
+
+
+<!--AUTO COMPLETE-->
+<link rel="stylesheet" href="../../../assets/css/jquery-ui.css" />
+<script src="../../../assets/js/jquery-1.12.4.js"></script>
+<script src="../../../assets/js/jquery-ui.js"></script>
+
+<!-- General JS Scripts 
+  <script src="../../../assets/modules/jquery.min.js"></script>-->
+<script src="../../../assets/modules/popper.js"></script>
+<script src="../../../assets/modules/tooltip.js"></script>
+<script src="../../../assets/modules/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../../assets/modules/nicescroll/jquery.nicescroll.min.js"></script>
+<script src="../../../assets/modules/moment.min.js"></script>
+<script src="../../../assets/js/stisla.js"></script>
+
+<!-- JS Libraies
+  <script src="../../../assets/modules/cleave-js/dist/cleave.min.js"></script>
+  <script src="../../../assets/modules/cleave-js/dist/addons/cleave-phone.us.js"></script>
+  <script src="../../../assets/modules/jquery-pwstrength/jquery.pwstrength.min.js"></script> -->
+<script src="../../../assets/modules/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="../../../assets/modules/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+<script src="../../../assets/modules/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+<script src="../../../assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+<script src="../../../assets/modules/select2/dist/js/select2.full.min.js"></script>
+<script src="../../../assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
+
+<!-- Page Specific JS File 
+  <script src="../../../assets/js/page/forms-advanced-forms.js"></script>-->
+
+<!-- Template JS File -->
+<script src="../../../assets/js/scripts.js"></script>
+<script src="../../../assets/js/custom.js"></script>
+
+<script>
+    $(document).ready(function() {
+        var ac_config = {
+            source: "../../../json/satuan.php",
+            select: function(event, ui) {
+                $("#kodesatuan").val(ui.item.id);
+                $("#namasatuan").val(ui.item.namasatuan);
+            },
+            focus: function(event, ui) {
+                $("#kodesatuan").val(ui.item.id);
+                $("#namasatuan").val(ui.item.namasatuan);
+            },
+            minLength: 1
+        };
+        $("#namasatuan").autocomplete(ac_config);
+    });
+
+    $(document).ready(function() {
+        var ac_config = {
+            source: "../../../json/kantor.php",
+            select: function(event, ui) {
+                $("#kodekantor").val(ui.item.id);
+                $("#namakantor").val(ui.item.namakantor);
+            },
+            focus: function(event, ui) {
+                $("#kodekantor").val(ui.item.id);
+                $("#namakantor").val(ui.item.namakantor);
+            },
+            minLength: 1
+        };
+        $("#namakantor").autocomplete(ac_config);
+    });
+</script>
+
+<body>
+</body>
+
+</html>
                             
