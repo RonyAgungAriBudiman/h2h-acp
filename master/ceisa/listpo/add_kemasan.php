@@ -38,7 +38,7 @@ if (isset($_POST["tutup"])) {
 <div class="row">
     <div class="col-12">
         <div class="card">
-            <form method="post" id="form" autocomplete="off" enctype="multipart/form-data">
+            
                 <div class="card-body">
                     <?php
                     if ($alert == "0") {
@@ -62,51 +62,69 @@ if (isset($_POST["tutup"])) {
                             </div>
                         </div><?php
                     } ?>
-                    <div class="form-group row">
-                        <label class="col-sm-4 col-form-label">Jumlah</label>
-                        <div class="col-sm-8">
-                            <input type="text" name="jumlahkemasan" class="form-control" value="<?php echo $_POST["jumlahkemasan"] ?>">
+                    <form method="post" id="form" autocomplete="off" enctype="multipart/form-data">    
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label">Jumlah</label>
+                            <div class="col-sm-8">
+                                <input type="text" name="jumlahkemasan" class="form-control" value="<?php echo $_POST["jumlahkemasan"] ?>">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-4 col-form-label">Jenis Kemasan</label>
-                        <div class="col-sm-8">
-                            <input type="text" name="jeniskemasan" id="jeniskemasan" class="form-control" required="required" value="<?php echo $_POST["jeniskemasan"] ?>">
-                            <input type="hidden" name="kodejeniskemasan" id="kodejeniskemasan" class="form-control" value="<?php echo $_POST["kodejeniskemasan"] ?>">
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label">Jenis Kemasan</label>
+                            <div class="col-sm-8">
+                                <input type="text" name="jeniskemasan" id="jeniskemasan" class="form-control" required="required" value="<?php echo $_POST["jeniskemasan"] ?>">
+                                <input type="hidden" name="kodejeniskemasan" id="kodejeniskemasan" class="form-control" value="<?php echo $_POST["kodejeniskemasan"] ?>">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-4 col-form-label">Merk Kemasan</label>
-                        <div class="col-sm-8">
-                            <input type="text" name="merkkemasan" class="form-control" value="<?php echo $_POST["merkkemasan"] ?>">
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label">Merk Kemasan</label>
+                            <div class="col-sm-8">
+                                <input type="text" name="merkkemasan" class="form-control" value="<?php echo $_POST["merkkemasan"] ?>">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-6">
-                            <?php
-                            if ($_POST['seqkontainer'] != '') {
-                            ?>
-                                <input type="hidden" name="seqkontainer" Value="<?php echo $_POST["seqkontainer"]; ?>">
+                        <div class="form-group row">
+                            <div class="col-sm-6">
+                                <?php
+                                if ($_POST['seqkontainer'] != '') {
+                                ?>
+                                    <input type="hidden" name="seqkontainer" Value="<?php echo $_POST["seqkontainer"]; ?>">
 
-                                <input type="submit" class="btn btn-success" name="update" Value="Update">
-                                <input type="submit" class="btn btn-danger" name="delete" Value="Delete">
-                                <input type="submit" class="btn btn-info" name="tutup" Value="Tutup">
-                            <?php
+                                    <input type="submit" class="btn btn-success" name="update" Value="Update">
+                                    <input type="submit" class="btn btn-danger" name="delete" Value="Delete">
+                                    <input type="submit" class="btn btn-info" name="tutup" Value="Tutup">
+                                <?php
 
-                            } else {
-                            ?>
-                                <input type="submit" class="btn btn-primary" name="simpan" Value="Simpan">
-                                <input type="submit" class="btn btn-info" name="tutup" Value="Tutup">
-                            <?php
-                            }
-                            ?>
+                                } else {
+                                ?>
+                                    <input type="submit" class="btn btn-primary" name="simpan" Value="Simpan">
+                                    <input type="submit" class="btn btn-info" name="tutup" Value="Tutup">
+                                <?php
+                                }
+                                ?>
+                            </div>
+                            <div class="col-sm-6">
+                                &nbsp;
+                            </div>
+                        </div>                    
+                    </form>        
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Jumlah Kemasan</th>
+                                        <th scope="col">Jenis Kemasan</th>
+                                        <th scope="col">Merk Kemasan</th>
+                                        <th scope="col">Edit</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="col-sm-6">
-                            &nbsp;
-                        </div>
-                    </div>
+                    </div>            
                 </div>
-            </form>
         </div>
     <div>
 </div>     
