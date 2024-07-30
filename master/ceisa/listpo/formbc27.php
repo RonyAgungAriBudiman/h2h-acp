@@ -381,25 +381,43 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
                                 </div>
 							</div>
 							<div class="card-body">
-								<div class="form-group row">
-									<label class="col-sm-4 col-form-label">Jumlah</label>
-									<div class="col-sm-8">
-										<input type="text" name="jumlahkemasan" class="form-control" value="<?php echo $_POST["jumlahkemasan"] ?>">
-									</div>
-								</div>
-								<div class="form-group row">
-									<label class="col-sm-4 col-form-label">Jenis Kemasan</label>
-									<div class="col-sm-8">
-										<input type="text" name="jeniskemasan" id="jeniskemasan" class="form-control" required="required" value="<?php echo $_POST["jeniskemasan"] ?>">
-										<input type="hidden" name="kodejeniskemasan" id="kodejeniskemasan" class="form-control" value="<?php echo $_POST["kodejeniskemasan"] ?>">
-									</div>
-								</div>
-								<div class="form-group row">
-									<label class="col-sm-4 col-form-label">Merk Kemasan</label>
-									<div class="col-sm-8">
-										<input type="text" name="merkkemasan" class="form-control" value="<?php echo $_POST["merkkemasan"] ?>">
-									</div>
-								</div>
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th scope="col">No</th>
+											<th scope="col">Jumlah Kemasan</th>
+											<th scope="col">Jenis Kemasan</th>
+											<th scope="col">Merek</th>
+										</tr>
+									</thead>
+									<tbody>
+										<?php
+										$nokemasan = 1;
+										$sql_kon = "SELECT a.SeqKemasan, a.KodeKemasan, a.JumlahKemasan, a.Merek, b.JenisKemasan
+													FROM BC_KEMASAN_TMP a 
+													LEFT JOIN ms_kemasan b on b.KodeJenisKemasan = a.KodeKemasan";
+										$data_kon = $sqlLib->select($sql_kon);
+										foreach ($data_kon as $row_kon) {
+										?>
+											<tr>
+												<td><?php echo $nokemasan; ?></td>
+												<td><?php echo $row_kon['JumlahKemasan'] ?></td>
+												<td><?php echo $row_kon['JenisKemasan'] ?></td>
+												<td><?php echo $row_kon['Merek'] ?></td>
+												<input type="hidden" name="seqkemasan<?php echo $dokno ?>" value="<?php echo $row_kon['SeqKemasan'] ?>">
+												<input type="hidden" name="nomorkontiner<?php echo $dokno ?>" value="<?php echo $row_kon['NomorKontiner'] ?>">
+												<input type="hidden" name="kodeukurankontainer<?php echo $dokno ?>" value="<?php echo $row_kon['KodeUkuranKontainer'] ?>">
+												<input type="hidden" name="kodejeniskontainer<?php echo $dokno ?>" value="<?php echo $row_kon['KodeJenisKontainer'] ?>">
+												<input type="hidden" name="kodetipekontainer<?php echo $dokno ?>" value="<?php echo $row_kon['KodeTipeKontainer'] ?>">
+											</tr>
+										<?php
+
+										}
+										$nokemasan++;
+										?>
+										<input type="hidden" name="jmlkemasan" id="jmlkemasan" value="<?php echo ($nokemasan - 1); ?>">
+									</tbody>
+								</table>
 
 							</div>
 						</div>
