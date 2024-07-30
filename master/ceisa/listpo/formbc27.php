@@ -405,10 +405,9 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 												<td><?php echo $row_kon['JenisKemasan'] ?></td>
 												<td><?php echo $row_kon['Merek'] ?></td>
 												<input type="hidden" name="seqkemasan<?php echo $dokno ?>" value="<?php echo $row_kon['SeqKemasan'] ?>">
-												<input type="hidden" name="nomorkontiner<?php echo $dokno ?>" value="<?php echo $row_kon['NomorKontiner'] ?>">
-												<input type="hidden" name="kodeukurankontainer<?php echo $dokno ?>" value="<?php echo $row_kon['KodeUkuranKontainer'] ?>">
-												<input type="hidden" name="kodejeniskontainer<?php echo $dokno ?>" value="<?php echo $row_kon['KodeJenisKontainer'] ?>">
-												<input type="hidden" name="kodetipekontainer<?php echo $dokno ?>" value="<?php echo $row_kon['KodeTipeKontainer'] ?>">
+												<input type="hidden" name="kodejeniskemasan<?php echo $dokno ?>" value="<?php echo $row_kon['KodeKemasan'] ?>">
+												<input type="hidden" name="jumlahkemasan<?php echo $dokno ?>" value="<?php echo $row_kon['JumlahKemasan'] ?>">
+												<input type="hidden" name="merek<?php echo $dokno ?>" value="<?php echo $row_kon['Merek'] ?>">
 											</tr>
 										<?php
 
