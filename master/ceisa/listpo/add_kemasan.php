@@ -147,18 +147,18 @@ if (isset($_POST["tutup"])) {
 <script>
     $(document).ready(function() {
         var ac_config = {
-            source: "../../../json/satuan.php",
+            source: "../../../json/kemasan.php",
             select: function(event, ui) {
-                $("#kodesatuan").val(ui.item.id);
-                $("#namasatuan").val(ui.item.namasatuan);
+                $("#kodejeniskemasan").val(ui.item.id);
+                $("#jeniskemasan").val(ui.item.jeniskemasan);
             },
             focus: function(event, ui) {
-                $("#kodesatuan").val(ui.item.id);
-                $("#namasatuan").val(ui.item.namasatuan);
+                $("#kodejeniskemasan").val(ui.item.id);
+                $("#jeniskemasan").val(ui.item.jeniskemasan);
             },
             minLength: 1
         };
-        $("#namasatuan").autocomplete(ac_config);
+        $("#jeniskemasan").autocomplete(ac_config);
     });
 
     $(document).ready(function() {
