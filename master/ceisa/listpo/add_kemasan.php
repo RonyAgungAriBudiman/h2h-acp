@@ -85,9 +85,9 @@ if (isset($_POST["tutup"])) {
                         <div class="form-group row">
                             <div class="col-sm-6">
                                 <?php
-                                if ($_POST['seqkontainer'] != '') {
+                                if ($_POST['seqkemasan'] != '') {
                                 ?>
-                                    <input type="hidden" name="seqkontainer" Value="<?php echo $_POST["seqkontainer"]; ?>">
+                                    <input type="hidden" name="seqkemasan" Value="<?php echo $_POST["seqkemasan"]; ?>">
 
                                     <input type="submit" class="btn btn-success" name="update" Value="Update">
                                     <input type="submit" class="btn btn-danger" name="delete" Value="Delete">
