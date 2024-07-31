@@ -505,15 +505,15 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 									</div>
 									<div class="col-sm-12 mt-3">
 										<label>Nilai CIF</label>
-										<input type="text" name="cif" class="form-control" required="required" value="<?php echo $_POST["cif"] ?>">
+										<input type="text" name="cif" class="form-control" required="required" value="<?php echo $_POST["cif"] ?>" placeholder='0'>
 									</div>
 									<div class="col-sm-12 mt-3">
 										<label>Nilai Pabean</label>
-										<input type="text" name="nilaipabean" class="form-control" required="required" value="<?php echo $_POST["nilaipabean"] ?>">
+										<input type="text" name="nilaipabean" class="form-control" required="required" value="<?php echo $_POST["nilaipabean"] ?>" placeholder='0'>
 									</div>
 									<div class="col-sm-12 mt-3">
 										<label>Harga Penyerahan/Harga Jual/Harga Barang</label>
-										<input type="text" name="hargapenyerahan" class="form-control" required="required" value="<?php echo $_POST["hargapenyerahan"] ?>">
+										<input type="text" name="hargapenyerahan" class="form-control" required="required" value="<?php echo $_POST["hargapenyerahan"] ?>" placeholder='0'>
 									</div>
 
 								</div>
@@ -538,7 +538,7 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 						</div>
 					</div>	
 
-					<div class="col-12 col-md-6 col-lg-6">
+					<div class="col-12 col-md-4 col-lg-4">
 						<div class="card shadow p-1 mb-2 bg-white rounded">
 							<div class="card-header" style="border-bottom:solid 0.5px #31708f;">
 								<h4>Berat</h4>
@@ -547,15 +547,15 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 								<div class="form-group row">
 									<div class="col-sm-12">
 										<label>Volume (M3)</label>
-										<input type="text" name="bruto" class="form-control" required="required" value="<?php echo $_POST["volume"] ?>" placehorder="0">
+										<input type="text" name="bruto" class="form-control" required="required" value="<?php echo $_POST["volume"] ?>" placeholder='0'>
 									</div>
 									<div class="col-sm-12 mt-3">
 										<label>Berat Kotor (KGM)</label>
-										<input type="text" name="bruto" class="form-control" required="required" value="<?php echo $_POST["bruto"] ?>" placehorder="0">
+										<input type="text" name="bruto" class="form-control" required="required" value="<?php echo $_POST["bruto"] ?>" placeholder='0'>
 									</div>
 									<div class="col-sm-12 mt-3">
 										<label>Berat Bersih (KGM)</label>
-										<input type="text" name="netto" class="form-control" required="required" value="<?php echo $_POST["netto"] ?>" placehorder="0">
+										<input type="text" name="netto" class="form-control" required="required" value="<?php echo $_POST["netto"] ?>" placeholder='0'>
 									</div>
 
 								</div>
@@ -626,7 +626,7 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 							<div class="card mb-0" style="border-bottom:solid 0.5px #31708f;">
 								<div class="form-group row mt-1 mb-1">
 									<div class="col-sm-2  ml-3">
-										<?php echo $row['NamaBarang'] ?> (<?php echo $row['Qty'] ?>)
+										<?php echo $row['NamaBarang'] ?> (<?php echo $row['Qty'] ?> <?php echo $row['Satuan'] ?>)
 									</div>
 									<div class="col-sm-2  ml-3">
 										<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample<?php echo $row['SeqItem'] ?>" aria-expanded="false" aria-controls="collapseExample<?php echo $row['SeqItem'] ?>">
@@ -765,7 +765,7 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 													<div class="form-group row">
 														<div class="col-sm-6">
 															<label>Satuan</label>
-															<input type="text" name="jumlahsatuan<?php echo $no ?>" class="form-control" required="required" placeholder="0.00">
+															<input type="text" name="jumlahsatuan<?php echo $no ?>" value="<?php echo $row['Qty'] ?>" class="form-control" required="required" placeholder="0.00">
 														</div>
 														<div class="col-sm-6">
 															<label>&nbsp;</label>
@@ -793,28 +793,35 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 										<div class="col-12 col-md-4 col-lg-4">
 											<div class="card shadow p-1 mb-2 bg-white rounded">
 												<div class="card-body">
-													<div class="form-group row">
-														<div class="col-sm-12">
-															<label>Asal Barang</label>
-															<select name="kodeasalbarang<?php echo $no ?>" class="form-control" required="required">
-								                                <option value=""></option>
-								                                <option value="0" <?php if($_POST['kodeasalbarang']=="0") { echo "selected";} ?>>Import</option>
-								                                <option value="1" <?php if($_POST['kodeasalbarang']=="1") { echo "selected";} ?>>Lokal</option>
-								                                  
-								                            </select>
-														</div>
-													</div>
-													<div class="form-group row">
-														<div class="col-sm-12">
-															<label>Asal Negara</label>
-															<input type="text" name="namanegara<?php echo $no ?>" id="namanegara<?php echo $no ?>" class="form-control" >
-															<input type="hidden" name="kodenegara<?php echo $no ?>" id="kodenegara<?php echo $no ?>" class="form-control" >
-														</div>
-													</div>
+													
 													<div class="form-group row">
 														<div class="col-sm-12">
 															<label>Nilai CIF</label>
 															<input type="text" name="cif<?php echo $no ?>" class="form-control" placeholder="0.00">
+														</div>
+													</div>
+													<div class="form-group row">
+														<div class="col-sm-12">
+															<label>CIF Rupiah</label>
+															<input type="text" name="cifrupiah<?php echo $no ?>" class="form-control" placeholder="0.00">
+														</div>
+													</div>
+													<div class="form-group row">
+														<div class="col-sm-12">
+															<label>Harga Penyerahan/Harga Jual</label>
+															<input type="text" name="hargapenyerahan<?php echo $no ?>" value="<?php echo $row['Harga']?>" class="form-control" placeholder="0.00">
+														</div>
+													</div>
+													<div class="form-group row">
+														<div class="col-sm-12">
+															<label>Harga Perolehan</label>
+															<input type="text" name="hargaperolehan<?php echo $no ?>" class="form-control" placeholder="0.00">
+														</div>
+													</div>
+													<div class="form-group row">
+														<div class="col-sm-12">
+															<label>Nilai Jasa</label>
+															<input type="text" name="nilaijasa<?php echo $no ?>" class="form-control" placeholder="0.00">
 														</div>
 													</div>
 												</div>
