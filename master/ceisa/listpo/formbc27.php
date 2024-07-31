@@ -134,7 +134,7 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 
 									</select>
 								</div>
-								<div class="col-sm-12">
+								<div class="col-sm-12 mt-3">
 									<label>Tujuan Pengiriman</label>
 									<select class="form-control" name="kodetujuanpengiriman" required="required">
 										<option value="">-Pilih-</option>
@@ -512,8 +512,9 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 										<input type="text" name="nilaipabean" class="form-control" required="required" value="<?php echo $_POST["nilaipabean"] ?>" placeholder='0'>
 									</div>
 									<div class="col-sm-12 mt-3">
+										<?php $_POST["hargapenyerahan"] = $data_po[0]['TotalAmount'];?>
 										<label>Harga Penyerahan/Harga Jual/Harga Barang</label>
-										<input type="text" name="hargapenyerahan" class="form-control" required="required" value="<?php echo $_POST["hargapenyerahan"] ?>" placeholder='0'>
+										<input type="text" name="hargapenyerahan" class="form-control" required="required" value="<?php echo number_format($_POST["hargapenyerahan"]) ?>" placeholder='0'>
 									</div>
 
 								</div>

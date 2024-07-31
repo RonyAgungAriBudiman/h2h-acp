@@ -17,3 +17,23 @@ $jmlimpor = $_POST["jmlimpor"];
 $jmljam = $_POST['jmljam'];
 $jmlkemasan = $_POST['jmlkemasan'];
 $jmlkontainer = $_POST['jmlkontainer'];
+
+$sql_header = "INSERT INTO BC_HEADER (
+    Asuransi, BiayaTambahan, BiayaPengurang, Bruto, Cif,  Freight, HargaPenyerahan,
+    JabatanPernyataan, KodeDokumen, KodeJenisTpb, KodeKantor, KodeKantorTujuan, KodeTps,
+    KodeTujuanPengiriman, KodeTujuanTpb, KodeValuta, KotaPernyataan,  NamaPernyataan,
+    Ndpbm, Netto, NilaiBarang,NilaiJasa,NomorAju, TanggalPernyataan, NoPo,Urut,RecUser) VALUES (
+    '0','0','0','" . $_POST['bruto'] . "','" . $_POST['cif'] . "','" . $_POST['freight'] . "','" . $_POST['hargapenyerahan'] . "',
+    '" . $_POST['jabatanpernyataan'] . "','" . $_POST['kodedokumenbc'] . "', '".$_POST['kodejenistpb']."','" . $_POST['kodekantor'] . "', '".$_POST["kodekantortujuan"]."','',
+    '" . $_POST['kodetujuanpengiriman'] . "','" . $_POST['kodejenistpbtujuan'] . "','" . $_POST['kodevaluta'] . "','" . $_POST['kotapernyataan'] . "','" . $_POST['namapernyataan'] . "',
+    '" . $_POST['ndpbm'] . "', '" . $_POST['netto'] . "','" . $_POST['nilaibarang'] . "','" . $_POST['nilaijasa'] . "','" . $_POST['nomoraju'] . "','" . $_POST['tanggalpernyataan'] . "',
+    '" . $_POST["nopo"] . "', '" . $urut . "','" . $_SESSION["nama"] . "')";
+$save_header = $sqlLib->insert($sql_header);
+if ($save_header == "1") {
+    $alert = '01';
+    $note = "Proses simpan header berhasil!!";
+}
+else{
+    $alert = '1';
+    $note = "Proses simpan header gagal!!";
+}
