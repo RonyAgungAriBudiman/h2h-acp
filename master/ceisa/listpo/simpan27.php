@@ -30,8 +30,25 @@ $sql_header = "INSERT INTO BC_HEADER (
     '" . $_POST["nopo"] . "', '" . $urut . "','" . $_SESSION["nama"] . "')";
 $save_header = $sqlLib->insert($sql_header);
 if ($save_header == "1") {
-    $alert = '01';
-    $note = "Proses simpan header berhasil!!";
+    //Pengusaha
+    $sql_entitas_3 = "INSERT INTO BC_ENTITAS (
+            NomorAju,Seri,KodeEntitas,KodeJenisIdentitas,NomorIdentitas,NamaEntitas,AlamatEntitas,NibEntitas,
+            KodeJenisApi,KodeStatus,NomorIjinEntitas,TanggalIjinEntitas,KodeNegara,NiperEntitas,RecUser) VALUES (
+            '" . $nomoraju . "', '3', '3', '" . $_POST["kodejenisidentitaspengusaha"] . "', '" . $_POST["nomoridentitaspengusaha"] . "', 
+            '" . $_POST["namaentitaspengusaha"] . "', '" . $_POST["alamatentitaspengusaha"] . "', '" . $_POST["nibentitaspengusaha"] . "', '2', '" . $_POST["kodestatuspengusaha"] . "',
+            '" . $_POST["nomorijinentitaspengusaha"] . "', '" . $_POST["tanggalijinentitaspengusaha"] . "', '', '','" . $_SESSION["nama"] . "')";
+    $save_entitas_3 = $sqlLib->insert($sql_entitas_3);
+    if ($save_entitas_3 == "1") {
+    }
+    else{
+        $sql_ent = "DELETE FROM BC_ENTITAS WHERE NomorAju = '" . $nomoraju . "'";
+        $data_ent = $sqlLib->delete($sql_ent);
+        $sql_hdr = "DELETE FROM BC_HEADER WHERE NomorAju = '" . $nomoraju . "'";
+        $data_hdr = $sqlLib->delete($sql_hdr);
+
+        $alert = '1';
+        $note = "Proses simpan entitas pengusaha gagal!!";
+    } 
 }
 else{
     $alert = '1';
