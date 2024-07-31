@@ -60,11 +60,13 @@ if (isset($_POST["tutup"])) {
 }
 
 if (isset($_POST["edit"])) {
-    $sql_tarif = "SELECT SeqKemasan, KodeKemasan, JumlahKemasan, Merek
-                    FROM BC_KEMASAN_TMP
+    $sql_tarif = "SELECT a.SeqKemasan, a.KodeKemasan, a.JumlahKemasan, a.Merek, b.JenisKemasan
+                    FROM BC_KEMASAN_TMP a
+                    LEFT JOIN ms_kemasan b on b.KodeJenisKemasan = a.KodeKemasan
                     WHERE SeqKemasan = '" . $_POST["seqkemasan"] . "' ";
     $data_datif = $sqlLib->select($sql_tarif);
     $_POST["kodejeniskemasan"] = $data_datif[0]['KodeKemasan'];
+    $_POST["jeniskemasan"] = $data_datif[0]['JenisKemasan'];
     $_POST["jumlahkemasan"] = $data_datif[0]['JumlahKemasan'];
     $_POST["merkkemasan"] = $data_datif[0]['Merek'];
     $_POST["seqkontainer"] = $data_datif[0]['SeqKontainer'];
@@ -129,7 +131,7 @@ if (isset($_POST["edit"])) {
                         <div class="form-group row">
                             <label class="col-sm-4 col-form-label">Jenis Kemasan</label>
                             <div class="col-sm-8">
-                                <input type="text" name="jeniskemasan" id="jeniskemasan" class="form-control" required="required" value="<?php echo $_POST["jeniskemasan"] ?>">
+                                <input type="text" name="jeniskemasan" id="jeniskemasan" class="form-control" value="<?php echo $_POST["jeniskemasan"] ?>">
                                 <input type="hidden" name="kodejeniskemasan" id="kodejeniskemasan" class="form-control" value="<?php echo $_POST["kodejeniskemasan"] ?>">
                             </div>
                         </div>

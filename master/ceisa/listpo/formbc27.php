@@ -425,90 +425,55 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 						<div class="card shadow p-1 mb-2 bg-white rounded">
 							<div class="card-header" style="border-bottom:solid 0.5px #31708f;">
 								<h4>Peti Kemas</h4>
+								<div class="col-sm-6 mb-2" style="float: right;">
+                                        <a href="javascript:void(0);" onclick="popup('nometer', 'master/ceisa/listso/add_kontainer.php', '1100', '500')">
+                                            <button class="btn btn-primary" type="button" style="border-radius: 0;"><i class="fa fa-plus"></i> Kontainer </button>
+                                        </a>
+                                </div>
 							</div>
 							<div class="card-body">
-								<div class="form-group row">
-									<label class="col-sm-4 col-form-label">Nomor Kontainer</label>
-									<div class="col-sm-8">
-										<input type="text" name="nomorkontainer" id="nomorkontainer" class="form-control" value="<?php echo $_POST["nomorkontainer"] ?>">
-									</div>
-								</div>
-								<div class="form-group row">
-									<label class="col-sm-4 col-form-label">Ukuran Kontainer</label>
-									<div class="col-sm-8">
-										<select class="form-control" name="kodeukurankontainer" required="required">
-											<option value="">-Pilih-</option>
-											<option value="20" <?php if ($_POST['kodeukurankontainer'] == "20") {
-																	echo "selected";
-																} ?>>20 FEET</option>
-											<option value="40" <?php if ($_POST['kodeukurankontainer'] == "40") {
-																	echo "selected";
-																} ?>>40 FEET</option>
-											<option value="45" <?php if ($_POST['kodeukurankontainer'] == "45") {
-																	echo "selected";
-																} ?>>45 FEET</option>
-											<option value="60" <?php if ($_POST['kodeukurankontainer'] == "60") {
-																	echo "selected";
-																} ?>>60 FEET</option>
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th scope="col">No</th>
+											<th scope="col">Nomor Kontainer</th>
+											<th scope="col">Ukuran Kontainer</th>
+											<th scope="col">Jenis Kontainer</th>
+											<th scope="col">Tipe Kontainer</th>
+										</tr>
+									</thead>
+									<tbody>
+										<?php
+										$nokontainer = 1;
+										$sql_kon = "SELECT a.SeqKontainer, a.NomorKontiner, a.KodeUkuranKontainer, a.KodeJenisKontainer, a.KodeTipeKontainer,
+										b.UkuranKontainer, c.JenisKontainer, d.TipeKontainer
+										FROM BC_KONTAINER_TMP a 
+										LEFT JOIN ms_ukuran_kontainer b on b.KodeUkuranKontainer = a.KodeUkuranKontainer
+										LEFT JOIN ms_jenis_kontainer c on c.KodeJenisKontainer = a.KodeJenisKontainer
+										LEFT JOIN ms_tipe_kontainer d on d.KodeTipeKontainer = a.KodeTipeKontainer";
+										$data_kon = $sqlLib->select($sql_kon);
+										foreach ($data_kon as $row_kon) {
+										?>
+											<tr>
+												<td><?php echo $nokontainer; ?></td>
+												<td><?php echo $row_kon['NomorKontiner'] ?></td>
+												<td><?php echo $row_kon['UkuranKontainer'] ?></td>
+												<td><?php echo $row_kon['JenisKontainer'] ?></td>
+												<td><?php echo $row_kon['TipeKontainer'] ?></td>
+												<input type="hidden" name="seqkontainer<?php echo $dokno ?>" value="<?php echo $row_kon['SeqKontainer'] ?>">
+												<input type="hidden" name="nomorkontiner<?php echo $dokno ?>" value="<?php echo $row_kon['NomorKontiner'] ?>">
+												<input type="hidden" name="kodeukurankontainer<?php echo $dokno ?>" value="<?php echo $row_kon['KodeUkuranKontainer'] ?>">
+												<input type="hidden" name="kodejeniskontainer<?php echo $dokno ?>" value="<?php echo $row_kon['KodeJenisKontainer'] ?>">
+												<input type="hidden" name="kodetipekontainer<?php echo $dokno ?>" value="<?php echo $row_kon['KodeTipeKontainer'] ?>">
+											</tr>
+										<?php
 
-										</select>
-									</div>
-								</div>
-								<div class="form-group row">
-									<label class="col-sm-4 col-form-label">Jenis Kontainer</label>
-									<div class="col-sm-8">
-										<select class="form-control" name="kodejeniskontainer" required="required">
-											<option value="">-Pilih-</option>
-											<option value="4" <?php if ($_POST['kodejeniskontainer'] == "4") {
-																	echo "selected";
-																} ?>>EMPTY</option>
-											<option value="8" <?php if ($_POST['kodejeniskontainer'] == "8") {
-																	echo "selected";
-																} ?>>FCL</option>
-											<option value="7" <?php if ($_POST['kodejeniskontainer'] == "7") {
-																	echo "selected";
-																} ?>>LCL</option>
-
-										</select>
-									</div>
-								</div>
-								<div class="form-group row">
-									<label class="col-sm-4 col-form-label">Tipe Kontainer</label>
-									<div class="col-sm-8">
-										<select class="form-control" name="kodetipekontainer" required="required">
-											<option value="">-Pilih-</option>
-											<option value="1" <?php if ($_POST['kodetipekontainer'] == "1") {
-																	echo "selected";
-																} ?>>General / Dry Cargo</option>
-											<option value="2" <?php if ($_POST['kodetipekontainer'] == "2") {
-																	echo "selected";
-																} ?>>Tunne Type</option>
-											<option value="3" <?php if ($_POST['kodetipekontainer'] == "3") {
-																	echo "selected";
-																} ?>>Open Top Steel</option>
-											<option value="4" <?php if ($_POST['kodetipekontainer'] == "4") {
-																	echo "selected";
-																} ?>>Flat Rack</option>
-											<option value="5" <?php if ($_POST['kodetipekontainer'] == "5") {
-																	echo "selected";
-																} ?>>Reefer/Refregete</option>
-											<option value="6" <?php if ($_POST['kodetipekontainer'] == "6") {
-																	echo "selected";
-																} ?>>Barge Container</option>
-											<option value="7" <?php if ($_POST['kodetipekontainer'] == "7") {
-																	echo "selected";
-																} ?>>Bulk Container</option>
-											<option value="8" <?php if ($_POST['kodetipekontainer'] == "8") {
-																	echo "selected";
-																} ?>>Isotank</option>
-											<option value="99" <?php if ($_POST['kodetipekontainer'] == "99") {
-																	echo "selected";
-																} ?>>Lain-lain</option>
-
-
-										</select>
-									</div>
-								</div>
+										}
+										$nokontainer++;
+										?>
+										<input type="hidden" name="jmlkontainer" id="jmlkontainer" value="<?php echo ($nokontainer - 1); ?>">
+									</tbody>
+                                </table>
 							</div>
 						</div>
 					</div>
