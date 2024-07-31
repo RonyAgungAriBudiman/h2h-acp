@@ -154,6 +154,12 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 
 									</select>
 								</div>
+
+								<div class="col-sm-12 mt-3">
+                                        <label>Tempat Penimbunan</label>
+                                        <input type="text" name="namatps" id="namatps" class="form-control" required="required" value="<?php echo $_POST["namatps"] ?>">
+                                        <input type="hidden" name="kodetps" id="kodetps" class="form-control" required="required" value="<?php echo $_POST["kodetps"] ?>">
+                                    </div>
 							</div>
 						</div>
 					</div>
