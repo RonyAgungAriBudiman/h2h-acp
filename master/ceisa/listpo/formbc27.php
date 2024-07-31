@@ -376,7 +376,7 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 								<h4>Kemasan</h4>
 								<div class="col-sm-6 mb-2" style="float: right;">
 									<a href="javascript:void(0);" onclick="popup('nometer', 'master/ceisa/listpo/add_kemasan.php', '1100', '500')">
-										<button class="btn btn-primary" type="button" style="border-radius: 0;"><i class="fa fa-plus"></i>Kemasan</button>
+										<button class="btn btn-primary" type="button" style="border-radius: 0;"><i class="fa fa-plus"></i> Kemasan</button>
 									</a>
                                 </div>
 							</div>
