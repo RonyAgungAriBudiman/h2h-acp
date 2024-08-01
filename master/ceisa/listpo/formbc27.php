@@ -649,6 +649,7 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 													<h4>Bahan Baku</h4>
 													<a href="javascript:void(0);" onclick="popup('nometer', 'master/ceisa/listpo/add_bb_27.php?seqitem=<?php echo $row['SeqItem']; ?>', '1100', '600')">
 														<button class="btn btn-primary" type="button" style="border-radius: 0;"><i class="fa fa-plus"></i> Bahan Baku</button> </a>
+														
 												</div>
 												<div class="card-body">
 													<div class="form-group row">
