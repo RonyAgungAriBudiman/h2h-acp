@@ -48,7 +48,128 @@ if ($save_header == "1") {
             '" . $_POST["nomorijinentitaspemilik"] . "', '" . $_POST["tanggalijinentitaspengusaha"] . "', '', '','" . $_SESSION["nama"] . "')";
         $save_entitas_7 = $sqlLib->insert($sql_entitas_7);
         if ($save_entitas_7 == "1"){
+            //Penerima
+			$sql_entitas_8 = "INSERT INTO BC_ENTITAS (
+                NomorAju,Seri,KodeEntitas,KodeJenisIdentitas,NomorIdentitas,NamaEntitas,AlamatEntitas,NibEntitas,
+                KodeJenisApi,KodeStatus,NomorIjinEntitas,TanggalIjinEntitas,KodeNegara,NiperEntitas,RecUser) VALUES (
+                '" . $_POST["nomoraju"] . "', '8', '8', '" . $_POST["kodejenisidentitaspenerima"] . "', '" . $_POST["nomoridentitaspenerima"] . "', 
+                '" . $_POST["namaentitaspenerima"] . "', '" . $_POST["alamatentitaspenerima"] . "', '" . $_POST["nibentitaspenerima"] . "', '2',
+                '" . $_POST["kodestatuspenerima"] . "','" . $_POST["nomorijinentitaspenerima"] . "', '" . $_POST["tanggalijinentitaspenerima"] . "', '', '','" . $_SESSION["nama"] . "')";
+            $save_entitas_8 = $sqlLib->insert($sql_entitas_8);
+            if ($save_entitas_8 == "1") {
+                //dokumen
+                $isi_dok = 0;
+                for ($a = 1; $a <= $jmldok; $a++) {
+                    $seqdoktmp = $_POST["seqdoktmp" . $a];
+                    $kodedokumen = $_POST["kodedokumen" . $a];
+                    $nomordokumen = $_POST["nomordokumen" . $a];
+                    $tanggaldokumen = $_POST["tanggaldokumen" . $a];
+                    if ($kodedokumen != "") {
+                        $sql_dokumen = "INSERT INTO BC_DOKUMEN (
+								NomorAju,Seri,KodeDokumen,NomorDokumen,TanggalDokumen,KodeFasilitas,KodeIjin,RecUser) VALUES (
+								'" . $nomoraju . "', '" . $a . "', '" . $kodedokumen . "', '" . $nomordokumen . "', '" . $tanggaldokumen . "', '', '', '" . $_SESSION["nama"] . "')";
+                        $save_dokumen = $sqlLib->insert($sql_dokumen);
+                        if ($save_dokumen == "1") {
+                            $isi_dok++;
+                            $sql_deldok = "DELETE FROM BC_DOKUMEN_TMP WHERE SeqDokTmp ='" . $seqdoktmp . "' ";
+                            $run_deldok = $sqlLib->delete($sql_deldok);
+                        }
+                    }
+                }
+                if ($isi_dok > 0) {
+                    //Pengangkut
+                    $sql_pengangkut = "INSERT INTO BC_PENGANGKUT (
+                        NomorAju,Seri,KodeCaraAngkut,NamaPengangkut,NomorPengangkut,KodeBendera,CallSign,FlagAngkutPlb,RecUser) VALUES (
+                        '" . $nomoraju . "','1','','".$_POST["namapengangkut"]."','".$_POST["nomorpengangkut"]."','','','','" . $_SESSION["nama"] . "')";
+                    $save_pengangkut = $sqlLib->insert($sql_pengangkut);
+                    if ($save_pengangkut == "1") {
+                        //Kemasan
+                        $isi_kemasan = 0;
+                        for ($b = 1; $b <= $jmlkemasan; $b++) {                            
+                            $seqkemasan = $_POST["seqkemasan" . $b];
+                            $kodejeniskemasan = $_POST["kodejeniskemasan" . $b];
+                            $jumlahkemasan = $_POST["jumlahkemasan" . $b];
+                            $merek = $_POST["merek" . $b];
+                            $sql_kemasan = "INSERT INTO BC_KEMASAN (
+                                NomorAju, Seri, KodeKemasan, JumlahKemasan, Merek, RecUser) VALUES (
+                                '" . $nomoraju . "', '" . $b . "', '" . $kodejeniskemasan . "', '" . $jumlahkemasan . "', 
+                                '" . $merek . "','" . $_SESSION["nama"] . "')";
+                            $save_kemasan = $sqlLib->insert($sql_kemasan);
+                            if ($save_kemasan == "1") {
+                                $isi_kemasan++;
+                                $sql_delkem = "DELETE FROM BC_KEMASAN_TMP WHERE SeqKemasan ='" . $seqkemasan . "' ";
+                                $run_delkem = $sqlLib->delete($sql_delkem);
+                            }
+                        }
+                        if($isi_kemasan >0){
+                            //kontainer
+                            $isi_kontainer = 0;
+                            for ($c = 1; $c <= $jmlkontainer; $c++) {
+                                $seqkontainer = $_POST["seqkontainer" . $c];
+                                $nomorkontiner = $_POST["nomorkontiner" . $c];
+                                $kodeukurankontainer = $_POST["kodeukurankontainer" . $c];
+                                $kodejeniskontainer = $_POST["kodejeniskontainer" . $c];
+                                $kodetipekontainer = $_POST["kodetipekontainer" . $c];
+                                $sql_kontainer = "INSERT INTO BC_KONTAINER (
+                                NomorAju, Seri, NomorKontiner, KodeUkuranKontainer, KodeJenisKontainer, KodeTipeKontainer, RecUser) VALUES (
+                                '" . $nomoraju . "', '" . $c . "', '" . $nomorkontiner . "', '" . $kodeukurankontainer . "',
+                                 '" . $kodejeniskontainer . "', '" . $kodetipekontainer . "', '" . $_SESSION["nama"] . "')";
+                                $save_kontainer = $sqlLib->insert($sql_kontainer);
+                                if ($save_kontainer == "1") {
+                                    $isi_kontainer++;
+                                    $sql_delkon = "DELETE FROM BC_KONTAINER_TMP WHERE SeqKontainer ='" . $seqkontainer . "' ";
+                                    $run_delkon = $sqlLib->delete($sql_delkon);
+                                }
+                            }
+                            if($isi_kontainer>0){
 
+                            }else{
+                                
+                            }
+                        }else{
+                            $sql_kut = "DELETE FROM BC_PENGANGKUT WHERE NomorAju = '" . $nomoraju . "'";
+                            $data_kut = $sqlLib->delete($sql_kut);
+                            $sql_dok = "DELETE FROM BC_DOKUMEN WHERE NomorAju = '" . $nomoraju . "'";
+                            $data_dok = $sqlLib->delete($sql_dok);
+                            $sql_ent = "DELETE FROM BC_ENTITAS WHERE NomorAju = '" . $nomoraju . "'";
+                            $data_ent = $sqlLib->delete($sql_ent);
+                            $sql_hdr = "DELETE FROM BC_HEADER WHERE NomorAju = '" . $nomoraju . "'";
+                            $data_hdr = $sqlLib->delete($sql_hdr);
+
+                            $alert = '1';
+                            $note = "Proses simpan kemasan gagal!!";
+                        }
+                    }else{
+                        $sql_dok = "DELETE FROM BC_DOKUMEN WHERE NomorAju = '" . $nomoraju . "'";
+                        $data_dok = $sqlLib->delete($sql_dok);
+                        $sql_ent = "DELETE FROM BC_ENTITAS WHERE NomorAju = '" . $nomoraju . "'";
+                        $data_ent = $sqlLib->delete($sql_ent);
+                        $sql_hdr = "DELETE FROM BC_HEADER WHERE NomorAju = '" . $nomoraju . "'";
+                        $data_hdr = $sqlLib->delete($sql_hdr);
+
+                        $alert = '1';
+                        $note = "Proses simpan pengangkut gagal!!";
+
+                    }
+                }else{
+                    $sql_ent = "DELETE FROM BC_ENTITAS WHERE NomorAju = '" . $nomoraju . "'";
+                    $data_ent = $sqlLib->delete($sql_ent);
+                    $sql_hdr = "DELETE FROM BC_HEADER WHERE NomorAju = '" . $nomoraju . "'";
+                    $data_hdr = $sqlLib->delete($sql_hdr);
+
+                    $alert = '1';
+                    $note = "Proses simpan dokumen gagal!!";
+                }
+            }
+            else{
+                $sql_ent = "DELETE FROM BC_ENTITAS WHERE NomorAju = '" . $nomoraju . "'";
+                $data_ent = $sqlLib->delete($sql_ent);
+                $sql_hdr = "DELETE FROM BC_HEADER WHERE NomorAju = '" . $nomoraju . "'";
+                $data_hdr = $sqlLib->delete($sql_hdr);
+
+                $alert = '1';
+                $note = "Proses simpan entitas penerima gagal!!";
+            }
         }else{
             $sql_ent = "DELETE FROM BC_ENTITAS WHERE NomorAju = '" . $nomoraju . "'";
             $data_ent = $sqlLib->delete($sql_ent);
