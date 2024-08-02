@@ -801,7 +801,7 @@ function getStockGudang($accessToken, $session, $host, $dari, $sampai, $sqlLib)
                                     $adj = $quantity;
                                     $qtyakhir = $data_cek_adj[0]['awal'] + $masuk - $data_cek_adj[0]['keluar'] + $adj;
                                     if ($itemNoMs == $itemNo) {
-                                        $sql_up_adj = "UPDATE ac_stock SET masuk = '" . $masuk . "', adjustment ='" . $adj . "' , akhir ='" . $qtyakhir . "' 
+                                        $sql_up_adj = "UPDATE ac_stock SET masuk = '" . $masuk . "', adjustment ='" . $adj . "' , akhir ='" . $qtyakhir . "' , so ='" . $qtyakhir . "'
                                                     WHERE tanggal ='" . $tanggal . "' AND itemNo ='" . $itemNo . "' AND lokasiGudang ='Utama'  ";
                                         $run_up_adj = $sqlLib->update($sql_up_adj);
                                     }
@@ -810,7 +810,7 @@ function getStockGudang($accessToken, $session, $host, $dari, $sampai, $sqlLib)
                                     $adj = $quantity * (-1);
                                     $qtyakhir = $data_cek_adj[0]['awal'] + $data_cek_adj[0]['masuk'] - $keluar + $adj;
                                     if ($itemNoMs == $itemNo) {
-                                        $sql_up_adj = "UPDATE ac_stock SET keluar = '" . $keluar . "', adjustment ='" . $adj . "' , akhir ='" . $qtyakhir . "' 
+                                        $sql_up_adj = "UPDATE ac_stock SET keluar = '" . $keluar . "', adjustment ='" . $adj . "' , akhir ='" . $qtyakhir . "' , so ='" . $qtyakhir . "'
                                                 WHERE tanggal ='" . $tanggal . "' AND itemNo ='" . $itemNo . "' AND lokasiGudang ='Utama'  ";
                                         $run_up_adj = $sqlLib->update($sql_up_adj);
                                     }
@@ -1366,7 +1366,7 @@ function getStockFg($accessToken, $session, $host, $dari, $sampai, $sqlLib)
                                     $adj = $quantity;
                                     $qtyakhir = $data_cek_adj[0]['awal'] + $masuk - $data_cek_adj[0]['keluar'] + $adj;
                                     if ($itemNoMs == $itemNo) {
-                                        $sql_up_adj = "UPDATE ac_stock SET masuk = '" . $masuk . "', adjustment ='" . $adj . "' , akhir ='" . $qtyakhir . "' 
+                                        $sql_up_adj = "UPDATE ac_stock SET masuk = '" . $masuk . "', adjustment ='" . $adj . "' , akhir ='" . $qtyakhir . "' , so ='" . $qtyakhir . "'
                                                     WHERE tanggal ='" . $tanggal . "' AND itemNo ='" . $itemNo . "' AND lokasiGudang ='Finish Good'  ";
                                         $run_up_adj = $sqlLib->update($sql_up_adj);
                                     }
@@ -1375,7 +1375,7 @@ function getStockFg($accessToken, $session, $host, $dari, $sampai, $sqlLib)
                                     $adj = $quantity * (-1);
                                     $qtyakhir = $data_cek_adj[0]['awal'] + $data_cek_adj[0]['masuk'] - $keluar + $adj;
                                     if ($itemNoMs == $itemNo) {
-                                        $sql_up_adj = "UPDATE ac_stock SET keluar = '" . $keluar . "', adjustment ='" . $adj . "' , akhir ='" . $qtyakhir . "' 
+                                        $sql_up_adj = "UPDATE ac_stock SET keluar = '" . $keluar . "', adjustment ='" . $adj . "' , akhir ='" . $qtyakhir . "' , so ='" . $qtyakhir . "'
                                                 WHERE tanggal ='" . $tanggal . "' AND itemNo ='" . $itemNo . "' AND lokasiGudang ='Finish Good'  ";
                                         $run_up_adj = $sqlLib->update($sql_up_adj);
                                     }
@@ -1647,7 +1647,7 @@ function getStockScrap($accessToken, $session, $host, $dari, $sampai, $sqlLib)
                                     $adj = $quantity;
                                     $qtyakhir = $data_cek_adj[0]['awal'] + $masuk - $data_cek_adj[0]['keluar'] + $adj;
                                     if ($itemNoMs == $itemNo) {
-                                        $sql_up_adj = "UPDATE ac_stock SET masuk = '" . $masuk . "', adjustment ='" . $adj . "' , akhir ='" . $qtyakhir . "' 
+                                        $sql_up_adj = "UPDATE ac_stock SET masuk = '" . $masuk . "', adjustment ='" . $adj . "' , akhir ='" . $qtyakhir . "' , so ='" . $qtyakhir . "'
                                                     WHERE tanggal ='" . $tanggal . "' AND itemNo ='" . $itemNo . "' AND lokasiGudang ='Scrap'  ";
                                         $run_up_adj = $sqlLib->update($sql_up_adj);
                                     }
@@ -1656,7 +1656,7 @@ function getStockScrap($accessToken, $session, $host, $dari, $sampai, $sqlLib)
                                     $adj = $quantity * (-1);
                                     $qtyakhir = $data_cek_adj[0]['awal'] + $data_cek_adj[0]['masuk'] - $keluar + $adj;
                                     if ($itemNoMs == $itemNo) {
-                                        $sql_up_adj = "UPDATE ac_stock SET keluar = '" . $keluar . "', adjustment ='" . $adj . "' , akhir ='" . $qtyakhir . "' 
+                                        $sql_up_adj = "UPDATE ac_stock SET keluar = '" . $keluar . "', adjustment ='" . $adj . "' , akhir ='" . $qtyakhir . "' , so ='" . $qtyakhir . "'
                                                 WHERE tanggal ='" . $tanggal . "' AND itemNo ='" . $itemNo . "' AND lokasiGudang ='Scrap'  ";
                                         $run_up_adj = $sqlLib->update($sql_up_adj);
                                     }

@@ -26,8 +26,19 @@
  	$sql7="DELETE FROM ac_pengeluaran_detail";
  	$run7=$sqlLib->delete($sql7);
  	
+ 	$sql8="DELETE FROM ac_po";
+ 	$run8=$sqlLib->delete($sql8);
+	 
+ 	$sql9="DELETE FROM ac_po_detail";
+ 	$run9=$sqlLib->delete($sql9);	 
+	 
+ 	$sql10="DELETE FROM ac_so";
+ 	$run10=$sqlLib->delete($sql10);
+	 
+ 	$sql11="DELETE FROM ac_so_detail";
+ 	$run11=$sqlLib->delete($sql11);
  	
- 	if ($run7 == "1") {
+ 	if ($run11 == "1") {
 	 	$alert = '0';
 	    $note = "Data Berhasil Dihapus!!";
 	}
@@ -35,6 +46,7 @@
 		$alert = '1';
 	    $note = "Data Gagal Dihapus!!";
 	}
+
 
  }
 ?>
