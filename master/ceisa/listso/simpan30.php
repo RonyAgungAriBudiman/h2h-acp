@@ -108,6 +108,8 @@ if ($save_header == "1") {
                 if ($save_entitas_7 == "1") {
                     $isi_dok = 0;
                     for ($a = 1; $a <= $jmldok; $a++) {
+                        
+                        $seqdoktmp = $_POST["seqdoktmp" . $a];
                         $kodedokumen = $_POST["kodedokumen" . $a];
                         $nomordokumen = $_POST["nomordokumen" . $a];
                         $tanggaldokumen = $_POST["tanggaldokumen" . $a];
@@ -118,6 +120,8 @@ if ($save_header == "1") {
                             $save_dokumen = $sqlLib->insert($sql_dokumen);
                             if ($save_dokumen == "1") {
                                 $isi_dok++;
+                                $sql_deldok = "DELETE FROM BC_DOKUMEN_TMP WHERE SeqDokTmp ='" . $seqdoktmp . "' ";
+                                $run_deldok = $sqlLib->delete($sql_deldok);
                             }
                         }
                     }
