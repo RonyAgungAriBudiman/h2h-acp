@@ -668,11 +668,11 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus'];
                                                     <td><?php echo $row_kon['UkuranKontainer'] ?></td>
                                                     <td><?php echo $row_kon['JenisKontainer'] ?></td>
                                                     <td><?php echo $row_kon['TipeKontainer'] ?></td>
-                                                    <input type="hidden" name="seqkontainer<?php echo $dokno ?>" value="<?php echo $row_kon['SeqKontainer'] ?>">
-                                                    <input type="hidden" name="nomorkontiner<?php echo $dokno ?>" value="<?php echo $row_kon['NomorKontiner'] ?>">
-                                                    <input type="hidden" name="kodeukurankontainer<?php echo $dokno ?>" value="<?php echo $row_kon['KodeUkuranKontainer'] ?>">
-                                                    <input type="hidden" name="kodejeniskontainer<?php echo $dokno ?>" value="<?php echo $row_kon['KodeJenisKontainer'] ?>">
-                                                    <input type="hidden" name="kodetipekontainer<?php echo $dokno ?>" value="<?php echo $row_kon['KodeTipeKontainer'] ?>">
+                                                    <input type="hidden" name="seqkontainer<?php echo $nokontainer ?>" value="<?php echo $row_kon['SeqKontainer'] ?>">
+                                                    <input type="hidden" name="nomorkontiner<?php echo $nokontainer ?>" value="<?php echo $row_kon['NomorKontiner'] ?>">
+                                                    <input type="hidden" name="kodeukurankontainer<?php echo $nokontainer ?>" value="<?php echo $row_kon['KodeUkuranKontainer'] ?>">
+                                                    <input type="hidden" name="kodejeniskontainer<?php echo $nokontainer ?>" value="<?php echo $row_kon['KodeJenisKontainer'] ?>">
+                                                    <input type="hidden" name="kodetipekontainer<?php echo $nokontainer ?>" value="<?php echo $row_kon['KodeTipeKontainer'] ?>">
                                                 </tr>
                                             <?php
 
