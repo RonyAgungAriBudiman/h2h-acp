@@ -133,9 +133,16 @@ if ($_POST['kirim']) {
                 $run_up = $sqlLib->update($sql_up);
                 $alert = '0';
                 $note = $message;
-            } else {
+            } else if($status == "failed") {
                 $alert = '1';
-                $note = $message;
+                $pesan = "";
+                foreach ($message as $isi) {
+                           $pesan .=  $isi . "<br>";
+                         }
+                $note = $pesan; 
+            } else if($status == ""){
+                $alert = '1';
+                $note = "Proses gagal, gangguan jaringan pada Ceisa 40!";
             }
         }
         //BC 23
@@ -148,9 +155,16 @@ if ($_POST['kirim']) {
                 $run_up = $sqlLib->update($sql_up);
                 $alert = '0';
                 $note = $message;
-            } else {
+            } else if($status == "failed") {
                 $alert = '1';
-                $note = $message;
+                $pesan = "";
+                foreach ($message as $isi) {
+                           $pesan .=  $isi . "<br>";
+                         }
+                $note = $pesan; 
+            } else if($status == ""){
+                $alert = '1';
+                $note = "Proses gagal, gangguan jaringan pada Ceisa 40!";
             }
         }
         //BC 30
@@ -163,9 +177,16 @@ if ($_POST['kirim']) {
                 $run_up = $sqlLib->update($sql_up);
                 $alert = '0';
                 $note = $message;
-            } else {
+            } else if($status == "failed") {
                 $alert = '1';
-                $note = $message;
+                $pesan = "";
+                foreach ($message as $isi) {
+                           $pesan .=  $isi . "<br>";
+                         }
+                $note = $pesan; 
+            } else if($status == ""){
+                $alert = '1';
+                $note = "Proses gagal, gangguan jaringan pada Ceisa 40!";
             }
         }
         //BC 25
@@ -178,13 +199,16 @@ if ($_POST['kirim']) {
                 $run_up = $sqlLib->update($sql_up);
                 $alert = '0';
                 $note = $message;
-            } else {
+            } else if($status == "failed") {
                 $alert = '1';
                 $pesan = "";
                 foreach ($message as $isi) {
-                    $pesan .=  $isi . "<br>";
-                }
-                $note = $pesan;
+                           $pesan .=  $isi . "<br>";
+                         }
+                $note = $pesan; 
+            } else if($status == ""){
+                $alert = '1';
+                $note = "Proses gagal, gangguan jaringan pada Ceisa 40!";
             }
         }
         //BC 262
