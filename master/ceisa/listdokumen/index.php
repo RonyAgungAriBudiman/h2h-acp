@@ -133,7 +133,7 @@ if ($_POST['kirim']) {
                 $run_up = $sqlLib->update($sql_up);
                 $alert = '0';
                 $note = $message;
-            } else if($status == "failed") {
+            } else if($status == "false") {
                 $alert = '1';
                 $pesan = "";
                 foreach ($message as $isi) {

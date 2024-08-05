@@ -225,9 +225,9 @@ function kirimbc40($username, $access_token, $nomor_aju, $sqlLib)
 
   // echo $alamatpengirim;
 
-    //  echo "<pre>";
-    //    print_r($result);
-    // echo "</pre>";
+     echo "<pre>";
+       print_r($result);
+    echo "</pre>";
 
 
   //$status = $result->status;

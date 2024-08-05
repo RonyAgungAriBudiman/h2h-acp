@@ -272,9 +272,9 @@ function kirimbc23($username, $access_token, $nomor_aju, $sqlLib)
   $result = json_decode($response);
 
 
-  // echo "<pre>";
-  // print_r($result);
-  // echo "</pre>";
+  echo "<pre>";
+  print_r($result);
+  echo "</pre>";
   //$status = $result->status;
   return $result;
 }
