@@ -115,7 +115,7 @@ function kirimbc40($username, $access_token, $nomor_aju, $sqlLib)
   $json_barang = json_encode($array_barang, JSON_PRETTY_PRINT);
 
   curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://apisdev-gw.beacukai.go.id/openapi/document', //'http://www.example.com/'
+  CURLOPT_URL => 'https://apisdev-gw.beacukai.go.id/openapi/document', 
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,

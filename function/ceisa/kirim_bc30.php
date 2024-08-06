@@ -108,11 +108,7 @@ function kirimbc30($username, $access_token, $nomor_aju, $sqlLib)
     $uraian = preg_replace("/[^a-zA-Z0-9()\s]/", "", $barang['Uraian']);
 
     $array_tarif = array();
-    // $sql_tarif = "SELECT a.SeriBarang, a.KodeTarif, a.KodeFasilitas, a.NilaiBayar, a.NilaiFasilitas, a.NilaiSudahDilunasi, a.Tarif, 
-    //                     a.TarifFasilitas, a.KodePungutan, a.Urut
-    //                 FROM BC_BARANG_TARIF a 
-    //                 WHERE a.NomorAju = '" . $nomor_aju . "' AND a.SeriBarang = '" . $barang['SeriBarang'] . "' 
-    //                 ORDER BY a.Urut Asc ";
+    
     $sql_tarif = "SELECT a.JumlahSatuan FROM BC_BARANG a
                   WHERE a.NomorAju = '" . $nomor_aju . "' AND a.SeriBarang = '" . $barang['SeriBarang'] . "' ";
     $data_tarif = $sqlLib->select($sql_tarif);
@@ -250,7 +246,7 @@ function kirimbc30($username, $access_token, $nomor_aju, $sqlLib)
                       {
                         "kodeJenisKontainer":"' . $data_kontainer[0]['KodeJenisKontainer'] . '",
                         "kodeTipeKontainer":"' . $data_kontainer[0]['KodeTipeKontainer'] . '",
-                        "kodeUkuranKontainer":"' . $data_kontainer[0]['KodeUkuranKontainer'] . '",
+                        "kodeUkuranKontainer":"' . trim($data_kontainer[0]['KodeUkuranKontainer']) . '",
                         "nomorKontainer":"' . $data_kontainer[0]['NomorKontiner'] . '",
                         "seriKontainer":' . $data_kontainer[0]['Seri'] . '
                       }
@@ -299,9 +295,9 @@ function kirimbc30($username, $access_token, $nomor_aju, $sqlLib)
   $result = json_decode($response);
 
  
-  // echo "<pre>";
-  // print_r($result);
-  // echo "</pre>";
+  echo "<pre>";
+  print_r($result);
+  echo "</pre>";
   // $status = $result->status;
  
   return $result;

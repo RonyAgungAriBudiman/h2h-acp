@@ -675,9 +675,9 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus'];
                                                     <input type="hidden" name="kodetipekontainer<?php echo $nokontainer ?>" value="<?php echo $row_kon['KodeTipeKontainer'] ?>">
                                                 </tr>
                                             <?php
-
-                                            }
                                             $nokontainer++;
+                                            }
+                                            
                                             ?>
                                             <input type="hidden" name="jmlkontainer" id="jmlkontainer" value="<?php echo ($nokontainer - 1); ?>">
                                         </tbody>
