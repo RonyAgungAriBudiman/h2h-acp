@@ -722,6 +722,7 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 																	}
 																	?>
 																	<input type="hidden" name="jmlimpor" id="jmlimpor" value="<?php echo ($imporno - 1); ?>">
+																</tbody>	
 															</table>
 														</div>
 													</div>
