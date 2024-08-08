@@ -122,7 +122,39 @@ if ($save_header == "1") {
                                 }
                             }
                             if($isi_kontainer>0){
+                                //barang
+                                $isi_barang = 0;
+                                for ($b = 1; $b <= $jmlrow; $b++) {
+                                    $hsnumber = $_POST["hsnumber" . $b];
+                                    $kodebarang = $_POST["kdbarang" . $b];
+                                    $uraian = $_POST["namabarang" . $b];
+                                    $merk = $_POST["merk" . $b];
+                                    $tipe = $_POST["tipe" . $b];
+                                    $ukuran = $_POST["ukuran" . $b];
+                                    $spesifikasilain = $_POST["spesifikasilain" . $b];
 
+                                    $jumlahsatuan = $_POST["jumlahsatuan" . $b];
+                                    $kodesatuanbarang = $_POST["kodesatuanbarang" . $b];
+                                    $jumlahkemasan = $_POST["jumlahkemasan" . $b];
+                                    $kodejeniskemasan = $_POST["kodejeniskemasan" . $b];
+                                    $netto_dt = $_POST["netto_dt" . $b];
+                                    $cif = $_POST["cif" . $b];
+                                    $cifrupiah = $_POST["cifrupiah" . $b];
+                                    $hargapenyerahan = $_POST["hargapenyerahan" . $b];
+                                    $hargaperolehan = $_POST["hargaperolehan" . $b];
+                                    $nilaijasa = $_POST["nilaijasa" . $b];
+                                    if ($kodebarang != "") {
+                                        $sql_barang = "INSERT INTO BC_BARANG (
+                                                            NomorAju, SeriBarang, Hs, KodeBarang, Uraian, Merek, Tipe, Ukuran, SpesifikasiLain,
+                                                            JumlahSatuan, KodeSatuan, KodeKemasan,JumlahKemasan, Netto, Cif, CifRupiah,HargaPenyerahan, HargaPerolehan, NilaiJasa, RecUser) VALUES (
+                                                                '" . $nomoraju . "','" . $b . "','" . $hsnumber . "','" . $kodebarang . "','" . $uraian . "', '" . $merk . "','" . $tipe . "','" . $ukuran . "','" . $spesifikasilain . "',
+                                                                '" . $jumlahsatuan . "', '" . $kodesatuanbarang . "','" . $kodejeniskemasan . "','" . $jumlahkemasan . "','" . $netto_dt . "','" . $cif . "',
+                                                                '" . $cifrupiah . "','" . $hargapenyerahan . "','" . $hargaperolehan . "','" . $nilaijasa . "','" . $_SESSION["nama"] . "')";
+                                        $save_barang = $sqlLib->insert($sql_barang);
+                                    }    
+                                
+                                }    
+                                    
                             }else{
                                 
                             }
