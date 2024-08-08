@@ -757,7 +757,7 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 																	$lokalno = 1;
 																	$sql_lok = "SELECT a.*
 																					FROM BC_BAHAN_BAKU_TMP a
-																					WHERE a.SeqItem = '" . $row['SeqItem'] . "' KodeAsalBahanBaku='1'";
+																					WHERE a.SeqItem = '" . $row['SeqItem'] . "' AND  KodeAsalBahanBaku='1'";
 																	$data_lok = $sqlLib->select($sql_lok);
 																	foreach ($data_lok as $row_lok) {
 																	?>
@@ -787,6 +787,7 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 																				<input type="hidden" name="cifrupiah<?php echo $lokalno ?>" value="<?php echo $row_lok['CifRupiah'] ?>">
 																				<input type="hidden" name="ndpbm<?php echo $lokalno ?>" value="<?php echo $row_lok['Ndpbm'] ?>">
 																				<input type="hidden" name="hargapenyerahan<?php echo $lokalno ?>" value="<?php echo $row_lok['HargaPenyerahan'] ?>">
+																				<input type="hidden" name="hargaperolehan<?php echo $lokalno ?>" value="<?php echo $row_lok['HargaPerolehan'] ?>">
 
 																				<a href="javascript:void(0);" onclick="popup('nometer', 'master/ceisa/listpo/add_bb_27_lokal.php?seqbb=<?php echo $row_lok['SeqBB'] ?>', '1100', '500')">
 																					<button class="btn btn-success" type="button" style="border-radius: 0;"><i class="fa fa-edit"></i> Dokumen </button>
