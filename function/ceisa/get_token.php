@@ -2,10 +2,16 @@
 function gettoken($username, $password)
 {
 	$curl = curl_init();
+    
+  //dev
     //https://apisdev-gw.beacukai.go.id/nle-oauth/v1/user/login
     //https://nlehub-dev.kemenkeu.go.id/auth-amws/v1/user/login
+
+    //prod
+    //https://apis-gw.beacukai.go.id/nle-oauth/v1/user/login
   curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://apisdev-gw.beacukai.go.id/nle-oauth/v1/user/login',
+  //CURLOPT_URL => 'https://apisdev-gw.beacukai.go.id/nle-oauth/v1/user/login',
+  CURLOPT_URL => 'https://apis-gw.beacukai.go.id/nle-oauth/v1/user/login',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,

@@ -6,6 +6,13 @@ function kirimbc40($username, $access_token, $nomor_aju, $sqlLib)
   //https://apisdev-gw.beacukai.go.id/openapi/document  
   //https://nlehub-dev.kemenkeu.go.id/openapi/document
 
+  //dev
+  //https://apisdev-gw.beacukai.go.id/openapi/document  
+  //https://nlehub-dev.kemenkeu.go.id/openapi/document
+
+  //prod
+  //https://apis-gw.beacukai.go.id/openapi/document 
+
   $sql_header = "SELECT a.Bruto,a.KodeJenisTpb, a.HargaPenyerahan, a.JabatanPernyataan, a.KodeDokumen, a.KodeKantor, a.KodeTujuanPengiriman,
                           a.KotaPernyataan, a.NamaPernyataan, a.Netto, a.NomorAju, '1' as Seri, a.TanggalPernyataan
                 FROM BC_HEADER a WHERE a.NomorAju ='" . $nomor_aju . "' ";
@@ -116,6 +123,7 @@ function kirimbc40($username, $access_token, $nomor_aju, $sqlLib)
 
   curl_setopt_array($curl, array(
   CURLOPT_URL => 'https://apisdev-gw.beacukai.go.id/openapi/document', 
+  //CURLOPT_URL => 'https://apis-gw.beacukai.go.id/openapi/document', 
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,

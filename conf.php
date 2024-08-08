@@ -23,8 +23,14 @@
     $oauthUrl = "https://account.accurate.id/oauth/authorize?client_id=$clientId&response_type=code&redirect_uri=$oauthCallback&scope=$scope";
 
     //ceisa 4.0
-    $username ="hkcidev";
-    $password ="Hkci1234";
+    //HKCI DEV
+     $username ="hkcidev";
+     $password ="Hkci1234";
+
+
+    //CMMI PROD
+    // $username ="cmmi2019";
+    // $password ="Cmmi2019";
 
     
 
