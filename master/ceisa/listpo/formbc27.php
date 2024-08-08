@@ -466,16 +466,16 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 												<td><?php echo $row_kon['UkuranKontainer'] ?></td>
 												<td><?php echo $row_kon['JenisKontainer'] ?></td>
 												<td><?php echo $row_kon['TipeKontainer'] ?></td>
-												<input type="hidden" name="seqkontainer<?php echo $dokno ?>" value="<?php echo $row_kon['SeqKontainer'] ?>">
-												<input type="hidden" name="nomorkontiner<?php echo $dokno ?>" value="<?php echo $row_kon['NomorKontiner'] ?>">
-												<input type="hidden" name="kodeukurankontainer<?php echo $dokno ?>" value="<?php echo $row_kon['KodeUkuranKontainer'] ?>">
-												<input type="hidden" name="kodejeniskontainer<?php echo $dokno ?>" value="<?php echo $row_kon['KodeJenisKontainer'] ?>">
-												<input type="hidden" name="kodetipekontainer<?php echo $dokno ?>" value="<?php echo $row_kon['KodeTipeKontainer'] ?>">
+												<input type="hidden" name="seqkontainer<?php echo $nokontainer ?>" value="<?php echo $row_kon['SeqKontainer'] ?>">
+												<input type="hidden" name="nomorkontiner<?php echo $nokontainer ?>" value="<?php echo $row_kon['NomorKontiner'] ?>">
+												<input type="hidden" name="kodeukurankontainer<?php echo $nokontainer ?>" value="<?php echo $row_kon['KodeUkuranKontainer'] ?>">
+												<input type="hidden" name="kodejeniskontainer<?php echo $nokontainer ?>" value="<?php echo $row_kon['KodeJenisKontainer'] ?>">
+												<input type="hidden" name="kodetipekontainer<?php echo $nokontainer ?>" value="<?php echo $row_kon['KodeTipeKontainer'] ?>">
 											</tr>
 										<?php
-
+											$nokontainer++;
 										}
-										$nokontainer++;
+										
 										?>
 										<input type="hidden" name="jmlkontainer" id="jmlkontainer" value="<?php echo ($nokontainer - 1); ?>">
 									</tbody>
@@ -643,18 +643,18 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 								</div>
 								<div class="collapse" id="collapseExample<?php echo $row['SeqItem'] ?>">
 									<div class="row">
-										<div class="col-12">
+										<div class="col-6">
 											<div class="card shadow p-1 mb-2 bg-white rounded">
 												<div class="card-header" style="border-bottom:solid 0.5px #31708f;">
-													<h4>Bahan Baku</h4>
-													<a href="javascript:void(0);" onclick="popup('nometer', 'master/ceisa/listpo/add_bb_27.php?seqitem=<?php echo $row['SeqItem']; ?>', '1100', '600')">
-														<button class="btn btn-primary" type="button" style="border-radius: 0;"><i class="fa fa-plus"></i> Bahan Baku</button> </a>
+													<h4>Bahan Baku Impor</h4>
+													<a href="javascript:void(0);" onclick="popup('nometer', 'master/ceisa/listpo/add_bb_27_impor.php?seqitem=<?php echo $row['SeqItem']; ?>', '1100', '600')">
+														<button class="btn btn-primary" type="button" style="border-radius: 0;"><i class="fa fa-plus"></i> Bahan Baku Impor</button> </a>
 														
 												</div>
 												<div class="card-body">
 													<div class="form-group row">
 														<div class="col-sm-12">
-															<table class="table table-hover">
+															<table id="example_bb_impor" class="table table-hover">
 																<thead>
 																	<tr>
 																		<th scope="col">No</th>
@@ -701,7 +701,7 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 																				<input type="hidden" name="ndpbm<?php echo $imporno ?>" value="<?php echo $row_imp['Ndpbm'] ?>">
 																				<input type="hidden" name="hargapenyerahan<?php echo $imporno ?>" value="<?php echo $row_imp['HargaPenyerahan'] ?>">
 
-																				<a href="javascript:void(0);" onclick="popup('nometer', 'master/ceisa/listpo/add_bb_27.php?seqbb=<?php echo $row_imp['SeqBB'] ?>', '1100', '500')">
+																				<a href="javascript:void(0);" onclick="popup('nometer', 'master/ceisa/listpo/add_bb_27_impor.php?seqbb=<?php echo $row_imp['SeqBB'] ?>', '1100', '500')">
 																					<button class="btn btn-success" type="button" style="border-radius: 0;"><i class="fa fa-edit"></i> Dokumen </button>
 																				</a>
 																			</td>
@@ -894,3 +894,8 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 			</div>
 		</div>
 	</div>
+<script>
+	new DataTable('#example_bb_impor', {
+    scrollX: true
+});
+</script>

@@ -6,10 +6,10 @@ if (isset($_POST["simpan"])) {
     $cifrupiah = $_POST["cif"] * $_POST["ndpbm"];
     $sql = "INSERT INTO BC_BAHAN_BAKU_TMP (SeqItem,KodeAsalBahanBaku,HS,KodeBarang,Uraian,Cif,NDPBM,CifRupiah,HargaPenyerahan,
                 JumlahSatuan,KodeDokumenAsal,KodeKantorAsal,KodeSatuan,Merek,NomorAjuAsal,NomorDaftarAsal,TanggalDaftarAsal,SpesifikasiLain,Tipe,Ukuran) 
-            VALUES ('" . $_POST["seqitem"] . "','" . $_POST["kodeasalbahanbaku"] . "', '" . $_POST["hs"] . "', '" . $_POST["kodebarang"] . "', '" . $_POST["uraian"] . "',
+            VALUES ('" . $_POST["seqitem"] . "','0', '" . $_POST["hs"] . "', '" . $_POST["kodebarang"] . "', '" . $_POST["uraian"] . "',
             '" . $_POST["cif"] . "','" . $_POST["ndpbm"] . "','" . $cifrupiah . "','" . $_POST["hargapenyerahan"] . "','" . $_POST["jumlahsatuan"] . "',
-            '" . $_POST["kodedokumenasal"] . "','" . $_POST["kodekantoasal"] . "','" . $_POST["kodesatuan"] . "','" . $_POST["merek"] . "',
-            '" . $_POST["nomorajuasal"] . "','" . $_POST["daftarnomorasal"] . "','" . $_POST["tanggaldaftarasal"] . "','" . $_POST["spesifikasilain"] . "',
+            '" . $_POST["kodedokumenasal"] . "','" . $_POST["kodekantorasal"] . "','" . $_POST["kodesatuan"] . "','" . $_POST["merek"] . "',
+            '" . $_POST["nomorajuasal"] . "','" . $_POST["nomordaftarasal"] . "','" . $_POST["tanggaldaftarasal"] . "','" . $_POST["spesifikasilain"] . "',
             '" . $_POST["tipe"] . "','" . $_POST["ukuran"] . "')";
     $save = $sqlLib->insert($sql);
     if ($save == "1") {
@@ -267,11 +267,11 @@ if ($_GET['seqbb'] != '') {
                                             <input type="text" name="namasatuan" id="namasatuan" class="form-control" required="required" value="<?php echo $_POST["namasatuan"] ?>">
                                             <input type="hidden" name="kodesatuan" id="kodesatuan" class="form-control" required="required" value="<?php echo $_POST["kodesatuan"] ?>">
                                         </div>
-                                        <div class="col-sm-12">
+                                        <div class="col-sm-12 mt-3">
                                             <label>Cif</label>
                                             <input type="text" name="cif" id="cif" class="form-control" required="required" value="<?php echo $_POST["cif"] ?>" placeholder="0">
                                         </div>
-                                        <div class="col-sm-12">
+                                        <div class="col-sm-12 mt-3">
                                             <label>Nilai Pabean</label>
                                             <input type="text" name="nilaipabean" id="nilaipabean" class="form-control" required="required" value="<?php echo $_POST["nilaipabean"] ?>" placeholder="0">
                                         </div>
