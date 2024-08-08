@@ -670,7 +670,7 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 																	$imporno = 1;
 																	$sql_imp = "SELECT a.*
 																					FROM BC_BAHAN_BAKU_TMP a
-																					WHERE a.SeqItem = '" . $row['SeqItem'] . "'";
+																					WHERE a.SeqItem = '" . $row['SeqItem'] . "' AND KodeAsalBahanBaku ='0'";
 																	$data_imp = $sqlLib->select($sql_imp);
 																	foreach ($data_imp as $row_imp) {
 																	?>
@@ -722,6 +722,93 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 																	}
 																	?>
 																	<input type="hidden" name="jmlimpor" id="jmlimpor" value="<?php echo ($imporno - 1); ?>">
+																</tbody>	
+															</table>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-6">
+											<div class="card shadow p-1 mb-2 bg-white rounded">
+												<div class="card-header" style="border-bottom:solid 0.5px #31708f;">
+													<h4>Bahan Baku Lokal</h4>
+													<a href="javascript:void(0);" onclick="popup('nometer', 'master/ceisa/listpo/add_bb_27_lokal.php?seqitem=<?php echo $row['SeqItem']; ?>', '1100', '600')">
+														<button class="btn btn-primary" type="button" style="border-radius: 0;"><i class="fa fa-plus"></i> Bahan Baku Lokal</button> </a>
+														
+												</div>
+												<div class="card-body">
+													<div class="form-group row">
+														<div class="col-sm-12">
+															<table id="example_bb_impor" class="table table-hover">
+																<thead>
+																	<tr>
+																		<th scope="col">No</th>
+																		<th scope="col">Nomor HS</th>
+																		<th scope="col">Kode Barang</th>
+																		<th scope="col">Uraian</th>
+																		<th scope="col">Edit</th>
+																		<th scope="col">Tarif</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<?php
+																	$lokalno = 1;
+																	$sql_lok = "SELECT a.*
+																					FROM BC_BAHAN_BAKU_TMP a
+																					WHERE a.SeqItem = '" . $row['SeqItem'] . "' KodeAsalBahanBaku='1'";
+																	$data_lok = $sqlLib->select($sql_lok);
+																	foreach ($data_lok as $row_lok) {
+																	?>
+																		<tr>
+																			<td><?php echo $lokalno; ?></td>
+																			<td><?php echo $row_lok['Hs'] ?></td>
+																			<td><?php echo $row_lok['KodeBarang'] ?></td>
+																			<td><?php echo $row_lok['Uraian'] ?></td>
+																			<td>
+																				<input type="hidden" name="seqbb<?php echo $lokalno ?>" value="<?php echo $row_lok['SeqBB'] ?>">
+																				<input type="hidden" name="kodeasalbahanbaku<?php echo $lokalno ?>" value="<?php echo $row_lok['KodeAsalBahanBaku'] ?>">
+																				<input type="hidden" name="hs<?php echo $lokalno ?>" value="<?php echo $row_lok['Hs'] ?>">
+																				<input type="hidden" name="kodebarang<?php echo $lokalno ?>" value="<?php echo $row_lok['KodeBarang'] ?>">
+																				<input type="hidden" name="uraian<?php echo $lokalno ?>" value="<?php echo $row_lok['Uraian'] ?>">
+																				<input type="hidden" name="merek<?php echo $lokalno ?>" value="<?php echo $row_lok['Merek'] ?>">
+																				<input type="hidden" name="tipe<?php echo $lokalno ?>" value="<?php echo $row_lok['Tipe'] ?>">
+																				<input type="hidden" name="ukuran<?php echo $lokalno ?>" value="<?php echo $row_lok['Ukuran'] ?>">
+																				<input type="hidden" name="spesifikasilain<?php echo $lokalno ?>" value="<?php echo $row_lok['SpesifikasiLain'] ?>">
+																				<input type="hidden" name="kodesatuan<?php echo $lokalno ?>" value="<?php echo $row_lok['KodeSatuan'] ?>">
+																				<input type="hidden" name="jumlahsatuan<?php echo $lokalno ?>" value="<?php echo $row_lok['JumlahSatuan'] ?>">
+																				<input type="hidden" name="kodedokumenasal<?php echo $lokalno ?>" value="<?php echo $row_lok['KodeDokumenAsal'] ?>">
+																				<input type="hidden" name="kodekantorasal<?php echo $lokalno ?>" value="<?php echo $row_lok['KodeKantorAsal'] ?>">
+																				<input type="hidden" name="nomordaftarasal<?php echo $lokalno ?>" value="<?php echo $row_lok['NomorDaftarAsal'] ?>">
+																				<input type="hidden" name="tanggaldaftarasal<?php echo $lokalno ?>" value="<?php echo $row_lok['TanggalDaftarAsal'] ?>">
+																				<input type="hidden" name="nomorajuasal<?php echo $lokalno ?>" value="<?php echo $row_lok['NomorAjuAsal'] ?>">
+																				<input type="hidden" name="cif<?php echo $lokalno ?>" value="<?php echo $row_lok['Cif'] ?>">
+																				<input type="hidden" name="cifrupiah<?php echo $lokalno ?>" value="<?php echo $row_lok['CifRupiah'] ?>">
+																				<input type="hidden" name="ndpbm<?php echo $lokalno ?>" value="<?php echo $row_lok['Ndpbm'] ?>">
+																				<input type="hidden" name="hargapenyerahan<?php echo $lokalno ?>" value="<?php echo $row_lok['HargaPenyerahan'] ?>">
+
+																				<a href="javascript:void(0);" onclick="popup('nometer', 'master/ceisa/listpo/add_bb_27_lokal.php?seqbb=<?php echo $row_lok['SeqBB'] ?>', '1100', '500')">
+																					<button class="btn btn-success" type="button" style="border-radius: 0;"><i class="fa fa-edit"></i> Dokumen </button>
+																				</a>
+																			</td>
+																			<td>
+																				<?php if ($row_lok['KodeAsalBahanBaku'] == "0") { ?>
+																					<a href="javascript:void(0);" onclick="popup('nometer', 'master/ceisa/listso/add_bb_import_tarif.php?seqbb=<?php echo $row_lok['SeqBB'] ?>', '1100', '700')">
+																						<button class="btn btn-primary" type="button" style="border-radius: 0;"><i class="fa fa-plus"></i> Tarif </button>
+																					</a>
+																				<?php } else { ?>
+																					<a href="javascript:void(0);" onclick="popup('nometer', 'master/ceisa/listso/add_bb_lokal_tarif.php?seqbb=<?php echo $row_lok['SeqBB'] ?>', '1100', '700')">
+																						<button class="btn btn-primary" type="button" style="border-radius: 0;"><i class="fa fa-plus"></i> Tarif </button>
+																					</a>
+																				<?php } ?>
+																			</td>
+																		</tr>
+																	<?php
+																		$lokalno++;
+																	}
+																	?>
+																	<input type="hidden" name="jmlimpor" id="jmlimpor" value="<?php echo ($lokalno - 1); ?>">
 																</tbody>	
 															</table>
 														</div>
