@@ -68,7 +68,6 @@ if (isset($_POST["update"])) {
                 TanggalDaftarAsal= '".$_POST['tanggaldaftarasal']."',
                 SpesifikasiLain= '".$_POST['spesifikasilain']."',
                 Tipe= '".$_POST['tipe']."',
-                KodeAsalBahanBaku = '".$_POST['kodeasalbahanbaku']."',
                 Ukuran= '".$_POST['ukuran']."'
 				WHERE SeqBB = '" . $_POST['seqbb'] . "'";
     $run = $sqlLib->update($sql);
