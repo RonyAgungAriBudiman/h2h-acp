@@ -213,8 +213,7 @@ if ($save_header == "1") {
                                                     }   
                                                     
                                             }  
-                                            //save bb lokal
-                                            /*
+                                            //save bb lokal                                            
                                             for ($f = 1; $f <= $jmllokal; $f++) {
                                                 $seqbb = $_POST["seqbb" . $f];
                                                 $kodeasalbahanbaku = $_POST["kodeasalbahanbaku_l" . $f];
@@ -273,7 +272,7 @@ if ($save_header == "1") {
                                                     }  
                                                 }      
                                             }  
-                                            */ 
+                                             
                                         }
                                     }    
                                 
@@ -294,7 +293,7 @@ if ($save_header == "1") {
                                     // $data_tmp6 = $sqlLib->delete($sql_tmp6);
 
                                     $alert = '0';
-                                    $note = "Proses simpan berhasil!!".$sql_bb_import;
+                                    $note = "Proses simpan berhasil!!";
                                     //unset($_POST);
 
                                 }else{
