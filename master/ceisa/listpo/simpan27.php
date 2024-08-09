@@ -157,7 +157,7 @@ if ($save_header == "1") {
                                             //save bb impor
                                             for ($e = 1; $e <= $jmlimpor; $e++) {
                                                 $seqbb = $_POST["seqbb" . $e];
-                                                $kodeasalbahanbaku = $_POST["kodeasalbahanbaku" . $e];
+                                                $kodeasalbahanbaku = trim($_POST["kodeasalbahanbaku" . $e]);
                                                 $hs = $_POST["hs" . $e];
                                                 $kodebarang = $_POST["kodebarang" . $e];
                                                 $uraian = $_POST["uraian" . $e];
@@ -176,40 +176,43 @@ if ($save_header == "1") {
                                                 $cifrupiah = $_POST["cifrupiah" . $e];
                                                 $ndpbm = $_POST["ndpbm" . $e];
                                                 $hargapenyerahan = $_POST["hargapenyerahan" . $e];
-
-                                                $sql_bb_import = "INSERT INTO BC_BAHAN_BAKU (NomorAju, SeriBarang, SeriBahanBaku,KodeAsalBahanBaku,HS,KodeBarang,Uraian,Merek,Tipe,Ukuran,SpesifikasiLain,
-                                                                                            KodeSatuan, JumlahSatuan, KodeDokumenAsal,KodeKantorAsal,NomorDaftarAsal,TanggalDaftarAsal,NomorAjuAsal,Cif,CifRupiah,Ndpbm,HargaPenyerahan,
-                                                                                            SeriBarangAsal, SeriIzin, RecUser) 
-                                                                                        VALUES ('" . $nomoraju . "','" . $d . "','" . $e . "','" . $kodeasalbahanbaku . "','" . $hs . "','" . $kodebarang . "','" . $uraian . "',
-                                                                                                '" . $merek . "','" . $tipe . "','" . $ukuran . "','" . $spesifikasilain . "','" . $kodesatuan . "','" . $jumlahsatuan . "',
-                                                                                                '" . $kodedokumenasal . "','" . $kodekantorasal . "','" . $nomordaftarasal . "','" . $tanggaldaftarasal . "','" . $nomorajuasal . "',
-                                                                                                '" . $cif . "','" . $cifrupiah . "','" . $ndpbm . "','" . $hargapenyerahan . "','" . $seribarangasal . "','" . $seriizin . "','" . $_SESSION["nama"] . "')";
-                                                $save_bb_import = $sqlLib->insert($sql_bb_import);                                                
-                                                if ($save_bb_import == "1") {
-                                                    //save bahan baku tarif
-                                                    $sql_bb_tarif_imp = "SELECT SeqBBT, SeqBB,KodePungutan, KodeTarif, Tarif, KodeFasilitas, NilaiBayar, TarifFasilitas
-                                                                            FROM BC_BAHAN_BAKU_TARIF_TMP WHERE SeqBB ='" . $seqbb . "' Order By SeqBBT Asc  ";
-                                                    $data_bb_tarif_imp = $sqlLib->select($sql_bb_tarif_imp);
-                                                    foreach ($data_bb_tarif_imp as $row_bbt_imp) {
-                                                        $sql = "INSERT INTO BC_BAHAN_BAKU_TARIF (NomorAju, SeriBarang, SeriBahanBaku, KodeAsalBahanBaku, KodePungutan, KodeTarif, Tarif, KodeFasilitas, TarifFasilitas, NilaiBayar, 
-                                                                                                KodeSatuan, RecUser)
-                                                                                VALUES ('" . $nomoraju . "','" . $d . "','" . $e . "','" . $kodeasalbahanbaku . "','" . $row_bbt_imp['KodePungutan'] . "','" . $row_bbt_imp['KodeTarif'] . "',
-                                                                                        '" . $row_bbt_imp['Tarif'] . "','" . $row_bbt_imp['KodeFasilitas'] . "','" . $row_bbt_imp['TarifFasilitas'] . "','" . $row_bbt_imp['NilaiBayar'] . "',
-                                                                                        '" . $kodesatuan . "','" . $_SESSION["nama"] . "')";
-                                                        $run = $sqlLib->insert($sql);
-                                                        if ($run == "1") {
-                                                            //hapus bahan baku tarif tmp
-                                                            $sql_delbbt = "DELETE FROM BC_BAHAN_BAKU_TARIF_TMP WHERE SeqBBT ='" . $row_bbt_imp['SeqBBT'] . "' ";
-                                                            $run_delbbt = $sqlLib->delete($sql_delbbt);
+                                                if($kodeasalbahanbaku=="0")
+                                                {
+                                                    $sql_bb_import = "INSERT INTO BC_BAHAN_BAKU (NomorAju, SeriBarang, SeriBahanBaku,KodeAsalBahanBaku,HS,KodeBarang,Uraian,Merek,Tipe,Ukuran,SpesifikasiLain,
+                                                                                                KodeSatuan, JumlahSatuan, KodeDokumenAsal,KodeKantorAsal,NomorDaftarAsal,TanggalDaftarAsal,NomorAjuAsal,Cif,CifRupiah,Ndpbm,
+                                                                                                HargaPenyerahan,SeriBarangAsal, SeriIzin, RecUser) 
+                                                                                            VALUES ('" . $nomoraju . "','" . $d . "','" . $e . "','" . $kodeasalbahanbaku . "','" . $hs . "','" . $kodebarang . "','" . $uraian . "',
+                                                                                                    '" . $merek . "','" . $tipe . "','" . $ukuran . "','" . $spesifikasilain . "','" . $kodesatuan . "','" . $jumlahsatuan . "',
+                                                                                                    '" . $kodedokumenasal . "','" . $kodekantorasal . "','" . $nomordaftarasal . "','" . $tanggaldaftarasal . "','" . $nomorajuasal . "',
+                                                                                                    '" . $cif . "','" . $cifrupiah . "','" . $ndpbm . "','" . $hargapenyerahan . "','" . $seribarangasal . "','" . $seriizin . "','" . $_SESSION["nama"] . "')";
+                                                    $save_bb_import = $sqlLib->insert($sql_bb_import);                                                
+                                                    if ($save_bb_import == "1") {
+                                                        //save bahan baku tarif
+                                                        $sql_bb_tarif_imp = "SELECT SeqBBT, SeqBB,KodePungutan, KodeTarif, Tarif, KodeFasilitas, NilaiBayar, TarifFasilitas
+                                                                                FROM BC_BAHAN_BAKU_TARIF_TMP WHERE SeqBB ='" . $seqbb . "' Order By SeqBBT Asc  ";
+                                                        $data_bb_tarif_imp = $sqlLib->select($sql_bb_tarif_imp);
+                                                        foreach ($data_bb_tarif_imp as $row_bbt_imp) {
+                                                            $sql = "INSERT INTO BC_BAHAN_BAKU_TARIF (NomorAju, SeriBarang, SeriBahanBaku, KodeAsalBahanBaku, KodePungutan, KodeTarif, Tarif, KodeFasilitas, TarifFasilitas, NilaiBayar, 
+                                                                                                    KodeSatuan, RecUser)
+                                                                                    VALUES ('" . $nomoraju . "','" . $d . "','" . $e . "','" . $kodeasalbahanbaku . "','" . $row_bbt_imp['KodePungutan'] . "','" . $row_bbt_imp['KodeTarif'] . "',
+                                                                                            '" . $row_bbt_imp['Tarif'] . "','" . $row_bbt_imp['KodeFasilitas'] . "','" . $row_bbt_imp['TarifFasilitas'] . "','" . $row_bbt_imp['NilaiBayar'] . "',
+                                                                                            '" . $kodesatuan . "','" . $_SESSION["nama"] . "')";
+                                                            $run = $sqlLib->insert($sql);
+                                                            if ($run == "1") {
+                                                                //hapus bahan baku tarif tmp
+                                                                $sql_delbbt = "DELETE FROM BC_BAHAN_BAKU_TARIF_TMP WHERE SeqBBT ='" . $row_bbt_imp['SeqBBT'] . "' ";
+                                                                $run_delbbt = $sqlLib->delete($sql_delbbt);
+                                                            }
                                                         }
-                                                    }
 
-                                                    //hapus bahan baku tmp
-                                                    $sql_delbb = "DELETE FROM BC_BAHAN_BAKU_TMP WHERE SeqBB ='" . $seqbb . "' ";
-                                                    $run_delbb = $sqlLib->delete($sql_delbb);
-                                                }    
+                                                        //hapus bahan baku tmp
+                                                        $sql_delbb = "DELETE FROM BC_BAHAN_BAKU_TMP WHERE SeqBB ='" . $seqbb . "' ";
+                                                        $run_delbb = $sqlLib->delete($sql_delbb);
+                                                    }   
+                                                }     
                                             }  
                                             //save bb lokal
+                                            /*
                                             for ($f = 1; $f <= $jmllokal; $f++) {
                                                 $seqbb = $_POST["seqbb" . $f];
                                                 $kodeasalbahanbaku = $_POST["kodeasalbahanbaku" . $f];
@@ -231,40 +234,44 @@ if ($save_header == "1") {
                                                 $cifrupiah = $_POST["cifrupiah" . $f];
                                                 $ndpbm = $_POST["ndpbm" . $f];
                                                 $hargapenyerahan = $_POST["hargapenyerahan" . $f];
-                                                $hargaperolehan = $_POST["hargaperola$hargaperolehan" . $f];
-
-                                                $sql_bb_lokal = "INSERT INTO BC_BAHAN_BAKU (NomorAju, SeriBarang, SeriBahanBaku,KodeAsalBahanBaku,HS,KodeBarang,Uraian,Merek,Tipe,Ukuran,SpesifikasiLain,
-                                                                                            KodeSatuan, JumlahSatuan, KodeDokumenAsal,KodeKantorAsal,NomorDaftarAsal,TanggalDaftarAsal,NomorAjuAsal,Cif,CifRupiah,Ndpbm,
-                                                                                            HargaPenyerahan,SeriBarangAsal, SeriIzin, RecUser) 
-                                                                                        VALUES ('" . $nomoraju . "','" . $d . "','" . $f . "','" . $kodeasalbahanbaku . "','" . $hs . "','" . $kodebarang . "','" . $uraian . "',
-                                                                                                '" . $merek . "','" . $tipe . "','" . $ukuran . "','" . $spesifikasilain . "','" . $kodesatuan . "','" . $jumlahsatuan . "',
-                                                                                                '" . $kodedokumenasal . "','" . $kodekantorasal . "','" . $nomordaftarasal . "','" . $tanggaldaftarasal . "','" . $nomorajuasal . "',
-                                                                                                '" . $cif . "','" . $cifrupiah . "','" . $ndpbm . "','" . $hargapenyerahan . "','" . $seribarangasal . "','" . $seriizin . "','" . $_SESSION["nama"] . "')";
-                                                $save_bb_lokal = $sqlLib->insert($sql_bb_lokal);                                                
-                                                if ($save_bb_lokal == "1") {
-                                                    //save bahan baku tarif
-                                                    $sql_bb_tarif_lokal = "SELECT SeqBBT, SeqBB,KodePungutan, KodeTarif, Tarif, KodeFasilitas, NilaiBayar, TarifFasilitas
-                                                                            FROM BC_BAHAN_BAKU_TARIF_TMP WHERE SeqBB ='" . $seqbb . "' Order By SeqBBT Asc  ";
-                                                    $data_bb_tarif_lokal = $sqlLib->select($sql_bb_tarif_lokal);
-                                                    foreach ($data_bb_tarif_lokal as $row_bbt_lok) {
-                                                        $sql = "INSERT INTO BC_BAHAN_BAKU_TARIF (NomorAju, SeriBarang, SeriBahanBaku, KodeAsalBahanBaku, KodePungutan, KodeTarif, Tarif, KodeFasilitas, TarifFasilitas, NilaiBayar, 
-                                                                                                KodeSatuan, RecUser)
-                                                                                VALUES ('" . $nomoraju . "','" . $d . "','" . $f . "','" . $kodeasalbahanbaku . "','" . $row_bbt_lok['KodePungutan'] . "','" . $row_bbt_lok['KodeTarif'] . "',
-                                                                                        '" . $row_bbt_lok['Tarif'] . "','" . $row_bbt_lok['KodeFasilitas'] . "','" . $row_bbt_lok['TarifFasilitas'] . "','" . $row_bbt_lok['NilaiBayar'] . "',
-                                                                                        '" . $kodesatuan . "','" . $_SESSION["nama"] . "')";
-                                                        $run = $sqlLib->insert($sql);
-                                                        if ($run == "1") {
-                                                            //hapus bahan baku tarif tmp
-                                                            $sql_delbbt = "DELETE FROM BC_BAHAN_BAKU_TARIF_TMP WHERE SeqBBT ='" . $row_bbt_lok['SeqBBT'] . "' ";
-                                                            $run_delbbt = $sqlLib->delete($sql_delbbt);
+                                                $hargaperolehan = $_POST["hargaperolehan" . $f];
+                                                if($kodeasalbahanbaku=="1")
+                                                {
+                                                    $sql_bb_lokal = "INSERT INTO BC_BAHAN_BAKU (NomorAju, SeriBarang, SeriBahanBaku,KodeAsalBahanBaku,HS,KodeBarang,Uraian,Merek,Tipe,Ukuran,SpesifikasiLain,
+                                                                                                KodeSatuan, JumlahSatuan, KodeDokumenAsal,KodeKantorAsal,NomorDaftarAsal,TanggalDaftarAsal,NomorAjuAsal,Cif,CifRupiah,Ndpbm,
+                                                                                                HargaPenyerahan,HargaPerolehan,SeriBarangAsal, SeriIzin, RecUser) 
+                                                                                            VALUES ('" . $nomoraju . "','" . $d . "','" . $f . "','" . $kodeasalbahanbaku . "','" . $hs . "','" . $kodebarang . "','" . $uraian . "',
+                                                                                                    '" . $merek . "','" . $tipe . "','" . $ukuran . "','" . $spesifikasilain . "','" . $kodesatuan . "','" . $jumlahsatuan . "',
+                                                                                                    '" . $kodedokumenasal . "','" . $kodekantorasal . "','" . $nomordaftarasal . "','" . $tanggaldaftarasal . "','" . $nomorajuasal . "',
+                                                                                                    '" . $cif . "','" . $cifrupiah . "','" . $ndpbm . "','" . $hargapenyerahan . "','" . $hargapenyerahan . "',
+                                                                                                    '" . $seribarangasal . "','" . $seriizin . "','" . $_SESSION["nama"] . "')";
+                                                    $save_bb_lokal = $sqlLib->insert($sql_bb_lokal);                                                
+                                                    if ($save_bb_lokal == "1") {
+                                                        //save bahan baku tarif
+                                                        $sql_bb_tarif_lokal = "SELECT SeqBBT, SeqBB,KodePungutan, KodeTarif, Tarif, KodeFasilitas, NilaiBayar, TarifFasilitas
+                                                                                FROM BC_BAHAN_BAKU_TARIF_TMP WHERE SeqBB ='" . $seqbb . "' Order By SeqBBT Asc  ";
+                                                        $data_bb_tarif_lokal = $sqlLib->select($sql_bb_tarif_lokal);
+                                                        foreach ($data_bb_tarif_lokal as $row_bbt_lok) {
+                                                            $sql = "INSERT INTO BC_BAHAN_BAKU_TARIF (NomorAju, SeriBarang, SeriBahanBaku, KodeAsalBahanBaku, KodePungutan, KodeTarif, Tarif, KodeFasilitas, TarifFasilitas, NilaiBayar, 
+                                                                                                    KodeSatuan, RecUser)
+                                                                                    VALUES ('" . $nomoraju . "','" . $d . "','" . $f . "','" . $kodeasalbahanbaku . "','" . $row_bbt_lok['KodePungutan'] . "','" . $row_bbt_lok['KodeTarif'] . "',
+                                                                                            '" . $row_bbt_lok['Tarif'] . "','" . $row_bbt_lok['KodeFasilitas'] . "','" . $row_bbt_lok['TarifFasilitas'] . "','" . $row_bbt_lok['NilaiBayar'] . "',
+                                                                                            '" . $kodesatuan . "','" . $_SESSION["nama"] . "')";
+                                                            $run = $sqlLib->insert($sql);
+                                                            if ($run == "1") {
+                                                                //hapus bahan baku tarif tmp
+                                                                $sql_delbbt = "DELETE FROM BC_BAHAN_BAKU_TARIF_TMP WHERE SeqBBT ='" . $row_bbt_lok['SeqBBT'] . "' ";
+                                                                $run_delbbt = $sqlLib->delete($sql_delbbt);
+                                                            }
                                                         }
-                                                    }
 
-                                                    //hapus bahan baku tmp
-                                                    $sql_delbb = "DELETE FROM BC_BAHAN_BAKU_TMP WHERE SeqBB ='" . $seqbb . "' ";
-                                                    $run_delbb = $sqlLib->delete($sql_delbb);
-                                                }    
-                                            }    
+                                                        //hapus bahan baku tmp
+                                                        $sql_delbb = "DELETE FROM BC_BAHAN_BAKU_TMP WHERE SeqBB ='" . $seqbb . "' ";
+                                                        $run_delbb = $sqlLib->delete($sql_delbb);
+                                                    }  
+                                                }      
+                                            }  
+                                            */ 
                                         }
                                     }    
                                 
