@@ -178,14 +178,15 @@ if ($save_header == "1") {
                                                 $hargapenyerahan = $_POST["hargapenyerahan" . $e];
                                                 if($kodeasalbahanbaku=="0")
                                                 {
-                                                    $sql_bb_import = "INSERT INTO BC_BAHAN_BAKU (NomorAju, SeriBarang, SeriBahanBaku,KodeAsalBahanBaku,HS,KodeBarang,Uraian,Merek,Tipe,Ukuran,SpesifikasiLain,
-                                                                                                KodeSatuan, JumlahSatuan, KodeDokumenAsal,KodeKantorAsal,NomorDaftarAsal,TanggalDaftarAsal,NomorAjuAsal,Cif,CifRupiah,Ndpbm,
-                                                                                                HargaPenyerahan,SeriBarangAsal, SeriIzin, RecUser) 
-                                                                                            VALUES ('" . $nomoraju . "','" . $d . "','" . $e . "','" . $kodeasalbahanbaku . "','" . $hs . "','" . $kodebarang . "','" . $uraian . "',
-                                                                                                    '" . $merek . "','" . $tipe . "','" . $ukuran . "','" . $spesifikasilain . "','" . $kodesatuan . "','" . $jumlahsatuan . "',
-                                                                                                    '" . $kodedokumenasal . "','" . $kodekantorasal . "','" . $nomordaftarasal . "','" . $tanggaldaftarasal . "','" . $nomorajuasal . "',
-                                                                                                    '" . $cif . "','" . $cifrupiah . "','" . $ndpbm . "','" . $hargapenyerahan . "','" . $seribarangasal . "','" . $seriizin . "',
-                                                                                                    '" . $_SESSION["nama"] . "')";
+                                                    $sql_bb_import = "INSERT INTO BC_BAHAN_BAKU 
+                                                                        (NomorAju, SeriBarang, SeriBahanBaku,KodeAsalBahanBaku,HS,KodeBarang,Uraian,Merek,Tipe,Ukuran,SpesifikasiLain,
+                                                                        KodeSatuan, JumlahSatuan, KodeDokumenAsal,KodeKantorAsal,NomorDaftarAsal,TanggalDaftarAsal,NomorAjuAsal,Cif,
+                                                                        CifRupiah,Ndpbm,HargaPenyerahan,SeriBarangAsal, SeriIzin, RecUser) 
+                                                                        VALUES ('" . $nomoraju . "','" . $d . "','" . $e . "','" . $kodeasalbahanbaku . "','" . $hs . "','" . $kodebarang . "','" . $uraian . "',
+                                                                                '" . $merek . "','" . $tipe . "','" . $ukuran . "','" . $spesifikasilain . "','" . $kodesatuan . "','" . $jumlahsatuan . "',
+                                                                                '" . $kodedokumenasal . "','" . $kodekantorasal . "','" . $nomordaftarasal . "','" . $tanggaldaftarasal . "','" . $nomorajuasal . "',
+                                                                                '" . $cif . "','" . $cifrupiah . "','" . $ndpbm . "','" . $hargapenyerahan . "','" . $seribarangasal . "','" . $seriizin . "',
+                                                                                '" . $_SESSION["nama"] . "')";
                                                     $save_bb_import = $sqlLib->insert($sql_bb_import);     
                                                                                                
                                                     if ($save_bb_import == "1") {
