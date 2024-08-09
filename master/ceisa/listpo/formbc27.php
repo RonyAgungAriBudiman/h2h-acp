@@ -232,7 +232,7 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 									</div>
 									<div class="col-sm-6 mt-3">
 										<label>Nomor Izin TPB</label>
-										<input type="text" name="nomorijinentitaspenerima" class="form-control" value="<?php echo $_POST["nomorijinentitaspenerima"] ?>">
+										<input type="text" name="nomorijinentitaspenerima"  class="form-control" value="<?php echo $_POST["nomorijinentitaspenerima"] ?>">
 									</div>
 									<div class="col-sm-6 mt-3">
 										<label>Tanggal Izin TPB</label>
