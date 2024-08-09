@@ -261,14 +261,14 @@ if ($save_header == "1") {
                                                             $run = $sqlLib->insert($sql);
                                                             if ($run == "1") {
                                                                 //hapus bahan baku tarif tmp
-                                                                $sql_delbbt = "DELETE FROM BC_BAHAN_BAKU_TARIF_TMP WHERE SeqBBT ='" . $row_bbt_lok['SeqBBT'] . "' ";
-                                                                $run_delbbt = $sqlLib->delete($sql_delbbt);
+                                                                //$sql_delbbt = "DELETE FROM BC_BAHAN_BAKU_TARIF_TMP WHERE SeqBBT ='" . $row_bbt_lok['SeqBBT'] . "' ";
+                                                                ///$run_delbbt = $sqlLib->delete($sql_delbbt);
                                                             }
                                                         }
 
                                                         //hapus bahan baku tmp
-                                                        $sql_delbb = "DELETE FROM BC_BAHAN_BAKU_TMP WHERE SeqBB ='" . $seqbb . "' ";
-                                                        $run_delbb = $sqlLib->delete($sql_delbb);
+                                                        //$sql_delbb = "DELETE FROM BC_BAHAN_BAKU_TMP WHERE SeqBB ='" . $seqbb . "' ";
+                                                        //$run_delbb = $sqlLib->delete($sql_delbb);
                                                     }  
                                                 }      
                                             }  
