@@ -809,7 +809,7 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 																		$lokalno++;
 																	}
 																	?>
-																	<input type="hidden" name="jmlimpor" id="jmlimpor" value="<?php echo ($lokalno - 1); ?>">
+																	<input type="hidden" name="jmllokal" id="jmllokal" value="<?php echo ($lokalno - 1); ?>">
 																</tbody>	
 															</table>
 														</div>
