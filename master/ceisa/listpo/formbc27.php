@@ -681,7 +681,7 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 																			<td><?php echo $row_imp['Uraian'] ?></td>
 																			<td>
 																				<input type="hidden" name="seqbb<?php echo $imporno ?>" value="<?php echo $row_imp['SeqBB'] ?>">
-																				<input type="text" name="kodeasalbahanbaku<?php echo $imporno ?>" value="<?php echo $row_imp['KodeAsalBahanBaku'] ?>">
+																				<input type="hidden" name="kodeasalbahanbaku<?php echo $imporno ?>" value="<?php echo $row_imp['KodeAsalBahanBaku'] ?>">
 																				<input type="hidden" name="hs<?php echo $imporno ?>" value="<?php echo $row_imp['Hs'] ?>">
 																				<input type="hidden" name="kodebarang<?php echo $imporno ?>" value="<?php echo $row_imp['KodeBarang'] ?>">
 																				<input type="hidden" name="uraian<?php echo $imporno ?>" value="<?php echo $row_imp['Uraian'] ?>">
@@ -721,7 +721,7 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 																		$imporno++;
 																	}
 																	?>
-																	<input type="text" name="jmlimpor" id="jmlimpor" value="<?php echo ($imporno - 1); ?>">
+																	<input type="hidden" name="jmlimpor" id="jmlimpor" value="<?php echo ($imporno - 1); ?>">
 																</tbody>	
 															</table>
 														</div>
@@ -767,27 +767,27 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 																			<td><?php echo $row_lok['KodeBarang'] ?></td>
 																			<td><?php echo $row_lok['Uraian'] ?></td>
 																			<td>
-																				<input type="hidden" name="seqbb<?php echo $lokalno ?>" value="<?php echo $row_lok['SeqBB'] ?>">
-																				<input type="hidden" name="kodeasalbahanbaku<?php echo $lokalno ?>" value="<?php echo $row_lok['KodeAsalBahanBaku'] ?>">
-																				<input type="hidden" name="hs<?php echo $lokalno ?>" value="<?php echo $row_lok['Hs'] ?>">
-																				<input type="hidden" name="kodebarang<?php echo $lokalno ?>" value="<?php echo $row_lok['KodeBarang'] ?>">
-																				<input type="hidden" name="uraian<?php echo $lokalno ?>" value="<?php echo $row_lok['Uraian'] ?>">
-																				<input type="hidden" name="merek<?php echo $lokalno ?>" value="<?php echo $row_lok['Merek'] ?>">
-																				<input type="hidden" name="tipe<?php echo $lokalno ?>" value="<?php echo $row_lok['Tipe'] ?>">
-																				<input type="hidden" name="ukuran<?php echo $lokalno ?>" value="<?php echo $row_lok['Ukuran'] ?>">
-																				<input type="hidden" name="spesifikasilain<?php echo $lokalno ?>" value="<?php echo $row_lok['SpesifikasiLain'] ?>">
-																				<input type="hidden" name="kodesatuan<?php echo $lokalno ?>" value="<?php echo $row_lok['KodeSatuan'] ?>">
-																				<input type="hidden" name="jumlahsatuan<?php echo $lokalno ?>" value="<?php echo $row_lok['JumlahSatuan'] ?>">
-																				<input type="hidden" name="kodedokumenasal<?php echo $lokalno ?>" value="<?php echo $row_lok['KodeDokumenAsal'] ?>">
-																				<input type="hidden" name="kodekantorasal<?php echo $lokalno ?>" value="<?php echo $row_lok['KodeKantorAsal'] ?>">
-																				<input type="hidden" name="nomordaftarasal<?php echo $lokalno ?>" value="<?php echo $row_lok['NomorDaftarAsal'] ?>">
-																				<input type="hidden" name="tanggaldaftarasal<?php echo $lokalno ?>" value="<?php echo $row_lok['TanggalDaftarAsal'] ?>">
-																				<input type="hidden" name="nomorajuasal<?php echo $lokalno ?>" value="<?php echo $row_lok['NomorAjuAsal'] ?>">
-																				<input type="hidden" name="cif<?php echo $lokalno ?>" value="<?php echo $row_lok['Cif'] ?>">
-																				<input type="hidden" name="cifrupiah<?php echo $lokalno ?>" value="<?php echo $row_lok['CifRupiah'] ?>">
-																				<input type="hidden" name="ndpbm<?php echo $lokalno ?>" value="<?php echo $row_lok['Ndpbm'] ?>">
-																				<input type="hidden" name="hargapenyerahan<?php echo $lokalno ?>" value="<?php echo $row_lok['HargaPenyerahan'] ?>">
-																				<input type="hidden" name="hargaperolehan<?php echo $lokalno ?>" value="<?php echo $row_lok['HargaPerolehan'] ?>">
+																				<input type="hidden" name="seqbb_l<?php echo $lokalno ?>" value="<?php echo $row_lok['SeqBB'] ?>">
+																				<input type="hidden" name="kodeasalbahanbaku_l<?php echo $lokalno ?>" value="<?php echo $row_lok['KodeAsalBahanBaku'] ?>">
+																				<input type="hidden" name="hs_l<?php echo $lokalno ?>" value="<?php echo $row_lok['Hs'] ?>">
+																				<input type="hidden" name="kodebarang_l<?php echo $lokalno ?>" value="<?php echo $row_lok['KodeBarang'] ?>">
+																				<input type="hidden" name="uraian_l<?php echo $lokalno ?>" value="<?php echo $row_lok['Uraian'] ?>">
+																				<input type="hidden" name="merek_l<?php echo $lokalno ?>" value="<?php echo $row_lok['Merek'] ?>">
+																				<input type="hidden" name="tipe_l<?php echo $lokalno ?>" value="<?php echo $row_lok['Tipe'] ?>">
+																				<input type="hidden" name="ukuran_l<?php echo $lokalno ?>" value="<?php echo $row_lok['Ukuran'] ?>">
+																				<input type="hidden" name="spesifikasilain_l<?php echo $lokalno ?>" value="<?php echo $row_lok['SpesifikasiLain'] ?>">
+																				<input type="hidden" name="kodesatuan_l<?php echo $lokalno ?>" value="<?php echo $row_lok['KodeSatuan'] ?>">
+																				<input type="hidden" name="jumlahsatuan_l<?php echo $lokalno ?>" value="<?php echo $row_lok['JumlahSatuan'] ?>">
+																				<input type="hidden" name="kodedokumenasal_l<?php echo $lokalno ?>" value="<?php echo $row_lok['KodeDokumenAsal'] ?>">
+																				<input type="hidden" name="kodekantorasal_l<?php echo $lokalno ?>" value="<?php echo $row_lok['KodeKantorAsal'] ?>">
+																				<input type="hidden" name="nomordaftarasal_l<?php echo $lokalno ?>" value="<?php echo $row_lok['NomorDaftarAsal'] ?>">
+																				<input type="hidden" name="tanggaldaftarasal_l<?php echo $lokalno ?>" value="<?php echo $row_lok['TanggalDaftarAsal'] ?>">
+																				<input type="hidden" name="nomorajuasal_l<?php echo $lokalno ?>" value="<?php echo $row_lok['NomorAjuAsal'] ?>">
+																				<input type="hidden" name="cif_l<?php echo $lokalno ?>" value="<?php echo $row_lok['Cif'] ?>">
+																				<input type="hidden" name="cifrupiah_l<?php echo $lokalno ?>" value="<?php echo $row_lok['CifRupiah'] ?>">
+																				<input type="hidden" name="ndpbm_l<?php echo $lokalno ?>" value="<?php echo $row_lok['Ndpbm'] ?>">
+																				<input type="hidden" name="hargapenyerahan_l<?php echo $lokalno ?>" value="<?php echo $row_lok['HargaPenyerahan'] ?>">
+																				<input type="hidden" name="hargaperolehan_l<?php echo $lokalno ?>" value="<?php echo $row_lok['HargaPerolehan'] ?>">
 
 																				<a href="javascript:void(0);" onclick="popup('nometer', 'master/ceisa/listpo/add_bb_27_lokal.php?seqbb=<?php echo $row_lok['SeqBB'] ?>', '1100', '500')">
 																					<button class="btn btn-success" type="button" style="border-radius: 0;"><i class="fa fa-edit"></i> Dokumen </button>

@@ -176,8 +176,7 @@ if ($save_header == "1") {
                                                 $cifrupiah = $_POST["cifrupiah" . $e];
                                                 $ndpbm = $_POST["ndpbm" . $e];
                                                 $hargapenyerahan = $_POST["hargapenyerahan" . $e];
-                                                if($kodeasalbahanbaku=="0")
-                                                {
+                                                
                                                     $sql_bb_import = "INSERT INTO BC_BAHAN_BAKU 
                                                                         (NomorAju, SeriBarang, SeriBahanBaku,KodeAsalBahanBaku,HS,KodeBarang,Uraian,Merek,Tipe,Ukuran,SpesifikasiLain,
                                                                         KodeSatuan, JumlahSatuan, KodeDokumenAsal,KodeKantorAsal,NomorDaftarAsal,TanggalDaftarAsal,NomorAjuAsal,Cif,
@@ -195,8 +194,8 @@ if ($save_header == "1") {
                                                                                 FROM BC_BAHAN_BAKU_TARIF_TMP WHERE SeqBB ='" . $seqbb . "' Order By SeqBBT Asc  ";
                                                         $data_bb_tarif_imp = $sqlLib->select($sql_bb_tarif_imp);
                                                         foreach ($data_bb_tarif_imp as $row_bbt_imp) {
-                                                            $sql = "INSERT INTO BC_BAHAN_BAKU_TARIF (NomorAju, SeriBarang, SeriBahanBaku, KodeAsalBahanBaku, KodePungutan, KodeTarif, Tarif, KodeFasilitas, TarifFasilitas, NilaiBayar, 
-                                                                                                    KodeSatuan, RecUser)
+                                                            $sql = "INSERT INTO BC_BAHAN_BAKU_TARIF (NomorAju, SeriBarang, SeriBahanBaku, KodeAsalBahanBaku, KodePungutan, KodeTarif, 
+                                                                        Tarif, KodeFasilitas, TarifFasilitas, NilaiBayar, KodeSatuan, RecUser)
                                                                                     VALUES ('" . $nomoraju . "','" . $d . "','" . $e . "','" . $kodeasalbahanbaku . "','" . $row_bbt_imp['KodePungutan'] . "','" . $row_bbt_imp['KodeTarif'] . "',
                                                                                             '" . $row_bbt_imp['Tarif'] . "','" . $row_bbt_imp['KodeFasilitas'] . "','" . $row_bbt_imp['TarifFasilitas'] . "','" . $row_bbt_imp['NilaiBayar'] . "',
                                                                                             '" . $kodesatuan . "','" . $_SESSION["nama"] . "')";
@@ -212,32 +211,32 @@ if ($save_header == "1") {
                                                         // $sql_delbb = "DELETE FROM BC_BAHAN_BAKU_TMP WHERE SeqBB ='" . $seqbb . "' ";
                                                         // $run_delbb = $sqlLib->delete($sql_delbb);
                                                     }   
-                                                }     
+                                                    
                                             }  
                                             //save bb lokal
                                             /*
                                             for ($f = 1; $f <= $jmllokal; $f++) {
                                                 $seqbb = $_POST["seqbb" . $f];
-                                                $kodeasalbahanbaku = $_POST["kodeasalbahanbaku" . $f];
-                                                $hs = $_POST["hs" . $f];
-                                                $kodebarang = $_POST["kodebarang" . $f];
-                                                $uraian = $_POST["uraian" . $f];
-                                                $merek = $_POST["merek" . $f];
-                                                $tipe = $_POST["tipe" . $f];
-                                                $ukuran = $_POST["ukuran" . $f];
-                                                $spesifikasilain = $_POST["spesifikasilain" . $f];
-                                                $kodesatuan = $_POST["kodesatuan" . $f];
-                                                $jumlahsatuan = $_POST["jumlahsatuan" . $f];
-                                                $kodedokumenasal = $_POST["kodedokumenasal" . $f];
-                                                $kodekantorasal = $_POST["kodekantorasal" . $f];
-                                                $nomordaftarasal = $_POST["nomordaftarasal" . $f];
-                                                $tanggaldaftarasal = $_POST["tanggaldaftarasal" . $f];
-                                                $nomorajuasal = $_POST["nomorajuasal" . $f];
-                                                $cif = $_POST["cif" . $f];
-                                                $cifrupiah = $_POST["cifrupiah" . $f];
-                                                $ndpbm = $_POST["ndpbm" . $f];
-                                                $hargapenyerahan = $_POST["hargapenyerahan" . $f];
-                                                $hargaperolehan = $_POST["hargaperolehan" . $f];
+                                                $kodeasalbahanbaku = $_POST["kodeasalbahanbaku_l" . $f];
+                                                $hs = $_POST["hs_l" . $f];
+                                                $kodebarang = $_POST["kodebarang_l" . $f];
+                                                $uraian = $_POST["uraian_l" . $f];
+                                                $merek = $_POST["merek_l" . $f];
+                                                $tipe = $_POST["tipe_l" . $f];
+                                                $ukuran = $_POST["ukuran_l" . $f];
+                                                $spesifikasilain = $_POST["spesifikasilain_l" . $f];
+                                                $kodesatuan = $_POST["kodesatuan_l" . $f];
+                                                $jumlahsatuan = $_POST["jumlahsatuan_l" . $f];
+                                                $kodedokumenasal = $_POST["kodedokumenasal_l" . $f];
+                                                $kodekantorasal = $_POST["kodekantorasal_l" . $f];
+                                                $nomordaftarasal = $_POST["nomordaftarasal_l" . $f];
+                                                $tanggaldaftarasal = $_POST["tanggaldaftarasal_l" . $f];
+                                                $nomorajuasal = $_POST["nomorajuasal_l" . $f];
+                                                $cif = $_POST["cif_l" . $f];
+                                                $cifrupiah = $_POST["cifrupiah_l" . $f];
+                                                $ndpbm = $_POST["ndpbm_l" . $f];
+                                                $hargapenyerahan = $_POST["hargapenyerahan_l" . $f];
+                                                $hargaperolehan = $_POST["hargaperolehan_l" . $f];
                                                 if($kodeasalbahanbaku=="1")
                                                 {
                                                     $sql_bb_lokal = "INSERT INTO BC_BAHAN_BAKU (NomorAju, SeriBarang, SeriBahanBaku,KodeAsalBahanBaku,HS,KodeBarang,Uraian,Merek,Tipe,Ukuran,SpesifikasiLain,
