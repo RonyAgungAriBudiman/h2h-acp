@@ -236,7 +236,7 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 									</div>
 									<div class="col-sm-6 mt-3">
 										<label>Tanggal Izin TPB</label>
-										<input type="text" name="tanggalijinentitaspenerima" class="form-control" value="<?php echo $_POST["tanggalijinentitaspenerima"] ?>">
+										<input type="text" name="tanggalijinentitaspenerima" class="form-control datepicker" value="<?php echo $_POST["tanggalijinentitaspenerima"] ?>">
 									</div>
 								</div>
 							</div>

@@ -13,6 +13,9 @@ if ($_POST['simpan']) {
     if ($_POST['kodedokumenbc'] == "262") {
         include "simpan262.php";
     }
+    if ($_POST['kodedokumenbc'] == "27") {
+        include "simpan27.php";
+    }
 }
 
 
