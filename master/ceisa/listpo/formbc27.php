@@ -12,8 +12,8 @@ $sql_po = "SELECT a.NoPO, a.TanggalPo, a.Vendor, a.Alamat, a.Subtotal, a.Tax2Amo
                           LEFT JOIN ac_po_detail b on b.NoPO = a.NoPO
                           WHERE a.NoPO = '" . $_POST["nopo"]  . "' ";
 $data_po = $sqlLib->select($sql_po);
-$_POST["alamatentitaspengirim"] = $data_po[0]['Alamat'];
-$_POST["namaentitaspengirim"] = $data_po[0]['Vendor'];
+//$_POST["alamatentitaspenerima"] = $data_po[0]['Alamat'];
+$_POST["namaentitaspenerima"] = $data_po[0]['Vendor'];
 
 $sql_urut = "SELECT MAX(Urut) as Urut FROM BC_HEADER 
                       WHERE KodeDokumen = '27' AND  YEAR(TanggalPernyataan) = '" . date("Y") . "' ";
@@ -232,11 +232,11 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 									</div>
 									<div class="col-sm-6 mt-3">
 										<label>Nomor Izin TPB</label>
-										<input type="text" name="nomorijinentitaspenerima" class="form-control" readonly="readonly" value="<?php echo $_POST["nomorijinentitaspenerima"] ?>">
+										<input type="text" name="nomorijinentitaspenerima" class="form-control" value="<?php echo $_POST["nomorijinentitaspenerima"] ?>">
 									</div>
 									<div class="col-sm-6 mt-3">
 										<label>Tanggal Izin TPB</label>
-										<input type="text" name="tanggalijinentitaspenerima" class="form-control" readonly="readonly" value="<?php echo $_POST["tanggalijinentitaspenerima"] ?>">
+										<input type="text" name="tanggalijinentitaspenerima" class="form-control" value="<?php echo $_POST["tanggalijinentitaspenerima"] ?>">
 									</div>
 								</div>
 							</div>
