@@ -72,8 +72,8 @@ if ($save_header == "1") {
                         $save_dokumen = $sqlLib->insert($sql_dokumen);
                         if ($save_dokumen == "1") {
                             $isi_dok++;
-                            $sql_deldok = "DELETE FROM BC_DOKUMEN_TMP WHERE SeqDokTmp ='" . $seqdoktmp . "' ";
-                            $run_deldok = $sqlLib->delete($sql_deldok);
+                            // $sql_deldok = "DELETE FROM BC_DOKUMEN_TMP WHERE SeqDokTmp ='" . $seqdoktmp . "' ";
+                            // $run_deldok = $sqlLib->delete($sql_deldok);
                         }
                     }
                 }
@@ -98,8 +98,8 @@ if ($save_header == "1") {
                             $save_kemasan = $sqlLib->insert($sql_kemasan);
                             if ($save_kemasan == "1") {
                                 $isi_kemasan++;
-                                $sql_delkem = "DELETE FROM BC_KEMASAN_TMP WHERE SeqKemasan ='" . $seqkemasan . "' ";
-                                $run_delkem = $sqlLib->delete($sql_delkem);
+                                // $sql_delkem = "DELETE FROM BC_KEMASAN_TMP WHERE SeqKemasan ='" . $seqkemasan . "' ";
+                                // $run_delkem = $sqlLib->delete($sql_delkem);
                             }
                         }
                         if($isi_kemasan >0){
@@ -118,8 +118,8 @@ if ($save_header == "1") {
                                 $save_kontainer = $sqlLib->insert($sql_kontainer);
                                 if ($save_kontainer == "1") {
                                     $isi_kontainer++;
-                                    $sql_delkon = "DELETE FROM BC_KONTAINER_TMP WHERE SeqKontainer ='" . $seqkontainer . "' ";
-                                    $run_delkon = $sqlLib->delete($sql_delkon);
+                                    // $sql_delkon = "DELETE FROM BC_KONTAINER_TMP WHERE SeqKontainer ='" . $seqkontainer . "' ";
+                                    // $run_delkon = $sqlLib->delete($sql_delkon);
                                 }
                             }
                             if($isi_kontainer>0){
@@ -184,8 +184,10 @@ if ($save_header == "1") {
                                                                                             VALUES ('" . $nomoraju . "','" . $d . "','" . $e . "','" . $kodeasalbahanbaku . "','" . $hs . "','" . $kodebarang . "','" . $uraian . "',
                                                                                                     '" . $merek . "','" . $tipe . "','" . $ukuran . "','" . $spesifikasilain . "','" . $kodesatuan . "','" . $jumlahsatuan . "',
                                                                                                     '" . $kodedokumenasal . "','" . $kodekantorasal . "','" . $nomordaftarasal . "','" . $tanggaldaftarasal . "','" . $nomorajuasal . "',
-                                                                                                    '" . $cif . "','" . $cifrupiah . "','" . $ndpbm . "','" . $hargapenyerahan . "','" . $seribarangasal . "','" . $seriizin . "','" . $_SESSION["nama"] . "')";
-                                                    $save_bb_import = $sqlLib->insert($sql_bb_import);                                                
+                                                                                                    '" . $cif . "','" . $cifrupiah . "','" . $ndpbm . "','" . $hargapenyerahan . "','" . $seribarangasal . "','" . $seriizin . "',
+                                                                                                    '" . $_SESSION["nama"] . "')";
+                                                    $save_bb_import = $sqlLib->insert($sql_bb_import);     
+                                                    echo  $sql_bb_import;                                           
                                                     if ($save_bb_import == "1") {
                                                         //save bahan baku tarif
                                                         $sql_bb_tarif_imp = "SELECT SeqBBT, SeqBB,KodePungutan, KodeTarif, Tarif, KodeFasilitas, NilaiBayar, TarifFasilitas
@@ -200,14 +202,14 @@ if ($save_header == "1") {
                                                             $run = $sqlLib->insert($sql);
                                                             if ($run == "1") {
                                                                 //hapus bahan baku tarif tmp
-                                                                $sql_delbbt = "DELETE FROM BC_BAHAN_BAKU_TARIF_TMP WHERE SeqBBT ='" . $row_bbt_imp['SeqBBT'] . "' ";
-                                                                $run_delbbt = $sqlLib->delete($sql_delbbt);
+                                                                // $sql_delbbt = "DELETE FROM BC_BAHAN_BAKU_TARIF_TMP WHERE SeqBBT ='" . $row_bbt_imp['SeqBBT'] . "' ";
+                                                                // $run_delbbt = $sqlLib->delete($sql_delbbt);
                                                             }
                                                         }
 
                                                         //hapus bahan baku tmp
-                                                        $sql_delbb = "DELETE FROM BC_BAHAN_BAKU_TMP WHERE SeqBB ='" . $seqbb . "' ";
-                                                        $run_delbb = $sqlLib->delete($sql_delbb);
+                                                        // $sql_delbb = "DELETE FROM BC_BAHAN_BAKU_TMP WHERE SeqBB ='" . $seqbb . "' ";
+                                                        // $run_delbb = $sqlLib->delete($sql_delbb);
                                                     }   
                                                 }     
                                             }  
@@ -278,22 +280,22 @@ if ($save_header == "1") {
                                 }   
                                 
                                 if($isi_barang>0){
-                                    $sql_tmp1 = "DELETE FROM BC_DOKUMEN_TMP";
-                                    $data_tmp1 = $sqlLib->delete($sql_tmp1);
-                                    $sql_tmp2 = "DELETE FROM BC_BAHAN_BAKU_TMP";
-                                    $data_tmp2 = $sqlLib->delete($sql_tmp2);
-                                    $sql_tmp3 = "DELETE FROM BC_BARANG_TARIF_TMP";
-                                    $data_tmp3 = $sqlLib->delete($sql_tmp3);
-                                    $sql_tmp4 = "DELETE FROM BC_BAHAN_BAKU_TARIF_TMP";
-                                    $data_tmp4 = $sqlLib->delete($sql_tmp4);
-                                    $sql_tmp5 = "DELETE FROM BC_KONTAINER_TMP";
-                                    $data_tmp5 = $sqlLib->delete($sql_tmp5);
-                                    $sql_tmp6 = "DELETE FROM BC_KEMASAN_TMP";
-                                    $data_tmp6 = $sqlLib->delete($sql_tmp6);
+                                    // $sql_tmp1 = "DELETE FROM BC_DOKUMEN_TMP";
+                                    // $data_tmp1 = $sqlLib->delete($sql_tmp1);
+                                    // $sql_tmp2 = "DELETE FROM BC_BAHAN_BAKU_TMP";
+                                    // $data_tmp2 = $sqlLib->delete($sql_tmp2);
+                                    // $sql_tmp3 = "DELETE FROM BC_BARANG_TARIF_TMP";
+                                    // $data_tmp3 = $sqlLib->delete($sql_tmp3);
+                                    // $sql_tmp4 = "DELETE FROM BC_BAHAN_BAKU_TARIF_TMP";
+                                    // $data_tmp4 = $sqlLib->delete($sql_tmp4);
+                                    // $sql_tmp5 = "DELETE FROM BC_KONTAINER_TMP";
+                                    // $data_tmp5 = $sqlLib->delete($sql_tmp5);
+                                    // $sql_tmp6 = "DELETE FROM BC_KEMASAN_TMP";
+                                    // $data_tmp6 = $sqlLib->delete($sql_tmp6);
 
                                     $alert = '0';
                                     $note = "Proses simpan berhasil!!";
-                                    unset($_POST);
+                                    //unset($_POST);
 
                                 }else{
                                     $sql_brg = "DELETE FROM BC_BARANG WHERE NomorAju = '" . $nomoraju . "'";

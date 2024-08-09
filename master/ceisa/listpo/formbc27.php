@@ -554,7 +554,7 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 								<div class="form-group row">
 									<div class="col-sm-12">
 										<label>Volume (M3)</label>
-										<input type="text" name="bruto" class="form-control" required="required" value="<?php echo $_POST["volume"] ?>" placeholder='0'>
+										<input type="text" name="volume" class="form-control" required="required" value="<?php echo $_POST["volume"] ?>" placeholder='0'>
 									</div>
 									<div class="col-sm-12 mt-3">
 										<label>Berat Kotor (KGM)</label>
@@ -681,7 +681,7 @@ $_POST["kodestatuspemilik"] = $data_pt[0]['KodeStatus']
 																			<td><?php echo $row_imp['Uraian'] ?></td>
 																			<td>
 																				<input type="hidden" name="seqbb<?php echo $imporno ?>" value="<?php echo $row_imp['SeqBB'] ?>">
-																				<input type="hidden" name="kodeasalbahanbaku<?php echo $imporno ?>" value="<?php echo $row_imp['KodeAsalBahanBaku'] ?>">
+																				<input type="text" name="kodeasalbahanbaku<?php echo $imporno ?>" value="<?php echo $row_imp['KodeAsalBahanBaku'] ?>">
 																				<input type="hidden" name="hs<?php echo $imporno ?>" value="<?php echo $row_imp['Hs'] ?>">
 																				<input type="hidden" name="kodebarang<?php echo $imporno ?>" value="<?php echo $row_imp['KodeBarang'] ?>">
 																				<input type="hidden" name="uraian<?php echo $imporno ?>" value="<?php echo $row_imp['Uraian'] ?>">
