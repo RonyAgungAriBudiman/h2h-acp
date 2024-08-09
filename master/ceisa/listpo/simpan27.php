@@ -187,7 +187,7 @@ if ($save_header == "1") {
                                                                                                     '" . $cif . "','" . $cifrupiah . "','" . $ndpbm . "','" . $hargapenyerahan . "','" . $seribarangasal . "','" . $seriizin . "',
                                                                                                     '" . $_SESSION["nama"] . "')";
                                                     $save_bb_import = $sqlLib->insert($sql_bb_import);     
-                                                    echo  $sql_bb_import;                                           
+                                                                                               
                                                     if ($save_bb_import == "1") {
                                                         //save bahan baku tarif
                                                         $sql_bb_tarif_imp = "SELECT SeqBBT, SeqBB,KodePungutan, KodeTarif, Tarif, KodeFasilitas, NilaiBayar, TarifFasilitas
@@ -294,7 +294,7 @@ if ($save_header == "1") {
                                     // $data_tmp6 = $sqlLib->delete($sql_tmp6);
 
                                     $alert = '0';
-                                    $note = "Proses simpan berhasil!!";
+                                    $note = "Proses simpan berhasil!!".$sql_bb_import;
                                     //unset($_POST);
 
                                 }else{
